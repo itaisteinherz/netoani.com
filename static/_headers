@@ -1,17 +1,17 @@
 # Dynamic resources
 /sw.js
 	Cache-Control: no-cache, s-maxage=0, must-revalidate
-/**/*.html
+/*.html
 	Cache-Control: no-cache, s-maxage=0, must-revalidate
 
 # Static resources
-/**/*.jpg
+/*.jpg
 	Cache-Control: public, s-maxage=604800, immutable
-/**/*.png
+/*.png
 	Cache-Control: public, s-maxage=604800, immutable
-/**/*.css
+/*.css
 	Cache-Control: public, s-maxage=604800, immutable
-/**/*.js
+/*.js
 	Cache-Control: public, s-maxage=604800, immutable
-/**/*.woff
+/*.woff
 	Cache-Control: public, s-maxage=604800, immutable
