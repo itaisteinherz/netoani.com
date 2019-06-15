@@ -4,23 +4,25 @@ import FairyGates from "typography-theme-fairy-gates";
 FairyGates.overrideThemeStyles = () => {
 	return {
 		"a.gatsby-resp-image-link": {
-			backgroundImage: "none" // Removes the weird line under linked images
+			// Remove the weird line under linked images
+			backgroundImage: "none"
 		},
 		"div.gatsby-highlight": {
 			fontSize: "0.8em",
 			marginBottom: typography.rhythm(1)
-		},
-		blockquote: {
-			lineHeight: 1.5
 		}
 	};
 };
 
 delete FairyGates.googleFonts;
 
-const typography = new Typography(FairyGates);
+const options = Object.assign({}, FairyGates, {
+	baseLineHeight: 1.5
+});
 
-// Hot reload typography in development.
+const typography = new Typography(options);
+
+// Hot reload typography in development
 if (process.env.NODE_ENV !== "production") {
 	typography.injectStyles();
 }

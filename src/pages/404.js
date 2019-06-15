@@ -14,7 +14,7 @@ class NotFoundPage extends React.Component {
 				<SEO title="404: Not Found"/>
 				<h1>Not Found</h1>
 				<p>
-                    You just hit a route that doesn&#39;t exist... the sadness.
+                    You just hit a route that doesn&#39;t exist <span role="img" aria-label="sad">😕</span>
 				</p>
 			</Layout>
 		);
