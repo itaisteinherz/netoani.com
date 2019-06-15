@@ -59,7 +59,7 @@ module.exports = {
 				start_url: "/",
 				background_color: "#ffffff",
 				theme_color: "#663399",
-				display: "minimal-ui",
+				display: "minimal-ui"
 			}
 		},
 		"gatsby-plugin-offline",
