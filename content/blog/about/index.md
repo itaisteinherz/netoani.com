@@ -6,7 +6,7 @@ description: "First post of the blog, describing what it's about and what powers
 
 Welcome to my new blog 👋🏻
 
-My name is Itai (pronounced ee-thai) Steinherz, and I'm a 16 y/o student and software developer from Israel. Though the posts' topics may vary, they will mostly be about software development. [Follow me on Twitter](https://twitter.com/itaisteinherz) to get updates along the way, as I write and post more content.
+My name is [Itai](https://en.wikipedia.org/wiki/Itai) Steinherz, and I'm a 16 y/o student and software developer from Israel. Though the posts' topics may vary, they will mostly be about software development. [Follow me on Twitter](https://twitter.com/itaisteinherz) to get updates along the way, as I write and post more content.
 
 This website is powered by [Gatsby](https://github.com/gatsbyjs/gatsby), and based on the [Gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). Also, it uses the [Fairy Gates typography theme](https://github.com/KyleAMathews/typography.js/tree/master/packages/typography-theme-fairy-gates).
 
