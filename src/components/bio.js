@@ -17,6 +17,7 @@ function Bio() {
 			query={bioQuery}
 			render={data => {
 				const {author, social} = data.site.siteMetadata;
+
 				return (
 					<div
 						style={{
@@ -73,7 +74,8 @@ const bioQuery = graphql`
             siteMetadata {
                 author
                 social {
-                    twitter
+					twitter
+					github
                 }
             }
         }
