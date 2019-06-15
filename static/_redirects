@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-http://reverent-stallman-de7349.netlify.com/* http://netoani.com/:splat 301!

@@ -1,8 +1,0 @@
-/*.html
-	cache-control: public, max-age=0, must-revalidate
-# /*.js, /*.css, /*.png, /*.jpg
-# 	cache-control: public, max-age=31536000, immutable
-/sw.js
-	cache-control: public, max-age=0, must-revalidate
-/*.woff
-	cache-control: public, max-age=31536000, immutable
