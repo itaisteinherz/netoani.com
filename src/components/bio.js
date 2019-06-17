@@ -41,14 +41,14 @@ function Bio() {
 							}}
 						/>
 						<p>
-                            Written by <strong>{author}</strong>, a 16 y/o student and software developer from Israel.
-                            You should follow him on
+                            I'm <strong>{author}</strong>, a software developer from Israel, high-school and university student.
+                            You can follow me on
 							{" "}
 							<a href={`https://twitter.com/${social.twitter}`}>
                                  Twitter
 							</a>
 							{" "}
-                            and on
+                            and
 							{" "}
 							<a href={`https://github.com/${social.github}`}>
                                 GitHub
