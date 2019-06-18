@@ -48,6 +48,7 @@ module.exports = {
 			resolve: "gatsby-plugin-google-analytics",
 			options: {
 				trackingId: "UA-142187776-1",
+				respectDNT: true
 			}
 		},
 		"gatsby-plugin-feed",
@@ -58,7 +59,7 @@ module.exports = {
 				short_name: "netoani.com",
 				start_url: "/",
 				background_color: "#ffffff",
-				theme_color: "#663399",
+				theme_color: "#4b9d87",
 				display: "minimal-ui"
 			}
 		},

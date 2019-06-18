@@ -1,6 +1,6 @@
 ---
 title: First Post
-date: "2019-06-14T20:19:12.934Z"
+date: 2019-06-14T20:19:12.934Z
 description: Welcome to my new blog 👋🏻 This post will go over who I am, the purpose of this blog and what powers it.
 ---
 
