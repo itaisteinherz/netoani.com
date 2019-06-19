@@ -1,6 +1,7 @@
 {
 	"name": "netoani.com",
 	"version": "0.0.0",
+	"private": true,
 	"description": "Itai Steinherz's website",
 	"license": "MIT",
 	"repository": "itaisteinherz/netoani.com",
