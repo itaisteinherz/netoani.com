@@ -16,9 +16,7 @@ FairyGates.overrideThemeStyles = () => {
 
 delete FairyGates.googleFonts;
 
-const options = Object.assign({}, FairyGates, {
-	baseLineHeight: 1.5
-});
+const options = {...FairyGates, baseLineHeight: 1.5};
 
 const typography = new Typography(options);
 

@@ -31,17 +31,23 @@ function Bio() {
 							style={{
 								marginRight: rhythm(1 / 2),
 								marginBottom: 0,
-								maxHeight: 50,
-								minWidth: 50,
-								maxWidth: 50,
+								maxHeight: 100,
+								minWidth: 100,
+								maxWidth: 100,
 								borderRadius: "100%"
 							}}
 							imgStyle={{
 								borderRadius: "50%"
 							}}
 						/>
-						<p>
-                            I'm <strong>{author}</strong>, a software developer from Israel, high-school and university student.
+						<p
+							style={{
+								// Center text verticallly (relative to the image) - http://jsfiddle.net/Mori/Qtng7
+								marginTop: "auto",
+								marginBottom: "auto"
+							}}
+						>
+                            I&apos;m <strong>{author}</strong>, a software developer from Israel, high-school and university student.
                             You can follow me on
 							{" "}
 							<a href={`https://twitter.com/${social.twitter}`}>
@@ -65,7 +71,7 @@ const bioQuery = graphql`
     query BioQuery {
         avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
             childImageSharp {
-                fixed(width: 100, height: 100) {
+                fixed(width: 400, height: 400) {
                     ...GatsbyImageSharpFixed
                 }
             }
