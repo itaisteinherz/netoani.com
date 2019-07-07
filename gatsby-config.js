@@ -7,7 +7,8 @@ module.exports = {
 		siteUrl: "https://netoani.com",
 		social: {
 			twitter: "itaisteinherz",
-			github: "itaisteinherz"
+			github: "itaisteinherz",
+			email: "itai.steinherz@gmail.com"
 		}
 	},
 	plugins: [
