@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/itaisteinherz
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://netoani.com
+  * I am itaisteinherz (https://keybase.io/itaisteinherz) on keybase.
+  * I have a public key ASBNAc_T7TwxtGTxVIAFdMzEek0kyNckS4tazjcfrbQ-Fwo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01204d01cfd3ed3c31b464f154800574ccc47a4d24c8d7244b8b5ace371fadb43e170a",
+      "host": "keybase.io",
+      "kid": "01204d01cfd3ed3c31b464f154800574ccc47a4d24c8d7244b8b5ace371fadb43e170a",
+      "uid": "1a6745847c93e5da330a64f4c7e3c219",
+      "username": "itaisteinherz"
+    },
+    "merkle_root": {
+      "ctime": 1568376450,
+      "hash": "0ec7fdb566e1af170c50f8a28ad6c092784408aa4c335ee6ed21ad6de98a11880c3402bb80759fdb3fbe46705d1dc0bb9574f3b43d443d682c490a72bc4260cc",
+      "hash_meta": "9497effaf8e0e6b7446f2995fba214f75dbb305570af60238cbcae438f8888a8",
+      "seqno": 7144967
+    },
+    "service": {
+      "entropy": "5Wxb9qa0k0mlWjUdQ8QY841Z",
+      "hostname": "netoani.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "4.0.0"
+  },
+  "ctime": 1568376454,
+  "expire_in": 504576000,
+  "prev": "b63398d89acde25b091297fb39712059f2540686162fe1ffce4812774d0e5a0b",
+  "seqno": 26,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgTQHP0+08MbRk8VSABXTMxHpNJMjXJEuLWs43H620PhcKp3BheWxvYWTESpcCGsQgtjOY2JrN4lsJEpf7OXEgWfJUBoYWL+H/zkgSd00OWgvEIEaKAQsLj2IiNvX1H6qOr71lqxrZRURTLxFzh5cbSgJbAgHCo3NpZ8RA5uMSnGhQnsTamcCNECHITJ1H1Ou5sOCpdOhW/uBPlLnFd2yqA1u/X+r7IqJMPHioMekAJhheSI5ycWr7AdVxCqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIK3v6C0HNinKMlUEwKmzu+jMlwA60HzP9wvZoR0wp4Qao3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/itaisteinherz
+
+==================================================================
