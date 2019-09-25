@@ -89,11 +89,11 @@ export const pageQuery = graphql`
         site {
             siteMetadata {
                 title
-				author
-				social {
-					twitter
-					email
-				}
+		author
+		social {
+			twitter
+			email
+		}
             }
         }
     }
