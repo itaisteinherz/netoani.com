@@ -66,7 +66,10 @@ class AboutPage extends React.Component {
 						Apart from high-level programming, I also have experience with low-level programming using C and Assembly, and like to fiddle with information security and play CTFs.
 					</p>
 					<p>
-						If you&apos;d like to contact me, feel free to do so via <a href={`mailto:${social.email}`}>email</a> or <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>.
+						These days I'm working at <a href="https://flytrex.com">Flytrex</a> as a software developer, as part of the backend team (mainly using Python, Docker, AWS, and a variety of other technologies and services).
+					</p>
+					<p>
+						If you&apos;d like to contact me, feel free to do so via <a href={`mailto:${social.email}`}>email</a> or <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>. You can also find my CV <a href="/cv.pdf">here</a>.
 					</p>
 					{/* eslint-enable react/jsx-child-element-spacing */}
 				</div>
@@ -79,22 +82,22 @@ export default AboutPage;
 
 export const pageQuery = graphql`
     query {
-	avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-            childImageSharp {
-                fixed(width: 400, height: 400) {
-                    ...GatsbyImageSharpFixed
-                }
-            }
-        }
-        site {
-            siteMetadata {
-                title
-		author
-		social {
-			twitter
-			email
+		avatar: file(absolutePath: {regex: "/profile-pic.jpg/"}) {
+			childImageSharp {
+				fixed(width: 400, height: 400) {
+					...GatsbyImageSharpFixed
+				}
+			}
 		}
-            }
-        }
-    }
+		site {
+			siteMetadata {
+				title
+				author
+				social {
+					twitter
+					email
+				}
+			}
+		}
+	}
 `;

@@ -35,9 +35,7 @@ class Homepage extends React.Component {
 							<small>{node.frontmatter.date}</small>
 							<p
 								dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
-									__html:
-                                        node.frontmatter.description ||
-                                        node.excerpt
+									__html: node.frontmatter.description || node.excerpt
 								}}
 							/>
 						</div>
