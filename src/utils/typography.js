@@ -10,6 +10,13 @@ FairyGates.overrideThemeStyles = () => {
 		"div.gatsby-highlight": {
 			fontSize: "0.8em",
 			marginBottom: typography.rhythm(1)
+		},
+		"blockquote": {
+			borderLeftWidth: "5px",
+			fontSize: "1.05em"
+		},
+		"blockquote > ul": {
+			marginLeft: "1.2em"
 		}
 	};
 };
