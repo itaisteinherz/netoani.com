@@ -6,21 +6,25 @@ description: An introductory post going over the basics of cost optimization in 
 
 ## Prologue
 
-I'm a long-time user of AWS, and have been a fan of cloud computing for quite some time. I also like attending technical meetups and conferences, and wanted to start giving talks myself.
-<br>
-As an excuse to learn more about the cloud, I submitted a proposal on cost optimization to the local [AWS Community Day](https://awscommunitydaytelaviv2019.splashthat.com) CFP. The proposal was accepted to the conference, and so now all that's left is to learn what cost optimization is about 😅
+I'm a long-time user of AWS, and have been a cloud computing advocate for quite some time. However, it seems to me like cost optimization is a part of cloud computing which doesn't get the attention it deserves. As I'm going to speak at [AWS Community Day Tel Aviv](https://awscommunitydaytelaviv2019.splashthat.com) about it, I also wanted to write a blogpost on the topic.
 
-This article will be an introduction to the subject of cost optimization (with a focus on AWS, as that's the cloud provider I'm most familiar with), with the end goal being to give you some inspiration on how you can look differently at your own cloud bills and cut costs.
+This article will be an introduction to the subject of cost optimization (focused on AWS, as that's the cloud provider I'm most familiar with), with the end goal being to give you some inspiration on how you can look differently at your own cloud bills and cut down on costs.
 
 ## The Five Pillars
 
-According to [the AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/cost-optimization-laying-the-foundation/cost-optimization-pillars.html), there are five general cost optimization pillars: right size, increase elasticity, leverage the right pricing model, optimize storage, and measure, monitor, and improve.
+According to the [AWS documentation](https://docs.aws.amazon.com/whitepapers/latest/cost-optimization-laying-the-foundation/cost-optimization-pillars.html), there are five general cost optimization pillars:
 
-Some of the pillars are pretty much self-explanatory, but I'll expand on some important aspects of those.
+- Right size
+- Increase elasticity
+- Leverage the right pricing model
+- Optimize storage
+- Measure, monitor, and improve
+
+Here, I chose to focus on the three pillars which I think are the most important to be familiar with.
 
 ### Right size
 
-I'd recommend you to read Corey Quinn's blogpost on the topic, ["Right Sizing Your Instances Is Nonsense"](https://www.lastweekinaws.com/blog/right-sizing-your-instances-is-nonsense/). Basically, your future needs when it comes to instance types are often unpredictable, and so you should choose a configuration that works for now and change it as necessary instead of opting for a specific instance type and commit to that.
+I'd recommend you to read Corey Quinn's blogpost on the topic, ["Right Sizing Your Instances Is Nonsense"](https://www.lastweekinaws.com/blog/right-sizing-your-instances-is-nonsense/). Basically, your future needs when it comes to instance types are often unpredictable, and so you should choose a configuration that works for now and change it as necessary instead of opting for a specific instance type and commit to that. While this approach may sound a bit contradictory to AWS' suggestion, it will enable you to be more flexible when working with the cloud, and react quickly to changes in your computing needs.
 
 ### Leverage the right pricing model
 
