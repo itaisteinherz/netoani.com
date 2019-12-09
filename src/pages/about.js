@@ -66,7 +66,7 @@ class AboutPage extends React.Component {
 						Apart from high-level programming, I also have experience with low-level programming using C and Assembly, and like to fiddle with information security and play CTFs.
 					</p>
 					<p>
-						I currently work at <a href="https://flytrex.com">Flytrex</a> as a software developer, as part of the backend team (mainly using Python, Docker, AWS, and a variety of other technologies and services).
+						I currently work at <a href="https://flytrex.com">Flytrex</a> as a software developer, as part of the backend team (mainly using Python, Docker, AWS, and various other technologies and services).
 					</p>
 					<p>
 						If you&apos;d like to contact me, feel free to do so via <a href={`mailto:${social.email}`}>email</a> or <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>. You can also find my CV <a href="/cv.pdf">here</a>.

@@ -1,6 +1,6 @@
 ---
 title: Getting Started with Cost Optimization on AWS
-date: 2019-11-23T18:57:27.772Z
+date: 2019-12-09T17:23:43.363Z
 description: An introductory post going over the basics of cost optimization in the cloud, and how to save money when using AWS.
 ---
 
@@ -28,16 +28,18 @@ I'd recommend you to read Corey Quinn's blogpost on the topic, ["Right Sizing Yo
 
 ### Leverage the right pricing model
 
-Using [spot](https://aws.amazon.com/ec2/spot/) and [reserved](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html) instances, you can significantly cut down on EC2 costs for predictable as well as spontaneous compute needs.
+Using [spot instances](https://aws.amazon.com/ec2/spot) and [Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html), you can significantly cut down on EC2 costs for predictable as well as spontaneous compute needs.
 
-_<Insert chart comparing sample pricing on on-demand, RI, and spot instances>_
+If you need as much flexibility as possible, the Compute Savings Plans are the best option available, and they to apply Fargate in addition to EC2. See [the pricing page](https://aws.amazon.com/savingsplans/pricing) for more info.
 
-Another alternative option for EC2 is buying [Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html), which are [more flexible than reserved instances](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html#sp-ris).
+_<Insert chart comparing sample pricing on on-demand, Savings Plans, and spot instances>_
 
-_<Insert costs table inspired by https://www.gorillastack.com/news/aws-savings-plans-reserved-instances/>_
-
-As you can tell from the above table, you may save more by using reserved instances, but choosing to use RIs requires you to commit to a fixed configuration, which is not always desirable. Savings Plans allow you to save _nearly_ as much, **without sacrificing any of the flexibility** you'd get by using on-demand EC2 instances.
+Another alternative for EC2 is using [reserved](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html) instances, which are less flexible than the Savings Plans AWS offers, and aren't much cheaper either ([this article](https://www.gorillastack.com/news/aws-savings-plans-reserved-instances) contains a nice comparison of the two options).
 
 ### Measure, monitor, and improve
 
 This means different things to different companies and organizations, but in general, you want to regularly go over your cloud bills and be aware of what you're spending money on. In countless times, the bill will show that by simply turning off unused EC2 instances, you can save a large percentage of the bill.
+
+One useful monitoring tool is [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets), which is built into the AWS Billing Dashboard and allows you to easily set your budget and be alerted when the current bill is exceeding your budget, or when it's predicted to do so.
+
+
