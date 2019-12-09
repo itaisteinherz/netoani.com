@@ -1,14 +1,15 @@
 ---
 title: Getting Started with Cost Optimization on AWS
 date: 2019-12-09T17:23:43.363Z
-description: An introductory post going over the basics of cost optimization in the cloud, and how to save money when using AWS.
+description: An introductory post going over the basics of cost optimization in the cloud, and how to save money when using AWS. The post also contains an overview of related releases from re:Invent 2019.
 ---
 
 ## Prologue
 
-I'm a long-time user of AWS, and have been a cloud computing advocate for quite some time. However, it seems to me like cost optimization is a part of cloud computing which doesn't get the attention it deserves. As I'm going to speak at [AWS Community Day Tel Aviv](https://awscommunitydaytelaviv2019.splashthat.com) about it, I also wanted to write a blogpost on the topic.
+I'm a long-time user of AWS, and have been a cloud computing advocate for quite some time. However, it seems to me like cost optimization is a part of cloud computing which doesn't get the attention it deserves. As I'm going to speak at [AWS Community Day Tel Aviv](https://awscommunitydaytelaviv2019.splashthat.com) about it, I also wanted to write a blogpost on the subject.
 
-This article will be an introduction to the subject of cost optimization (focused on AWS, as that's the cloud provider I'm most familiar with), with the end goal being to give you some inspiration on how you can look differently at your own cloud bills and cut down on costs.
+This article will be an introduction to cost optimization (focused on AWS, as that's the cloud provider I'm most familiar with), with the end goal being to give you some inspiration on how you can look differently at your own cloud bills and cut down on costs.
+
 
 ## The Five Pillars
 
@@ -42,12 +43,30 @@ This means different things to different companies and organizations, but in gen
 
 One useful monitoring tool is [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets), which is built into the AWS Billing Dashboard and allows you to easily set your budget and be alerted when the current bill is exceeding your budget, or when it's predicted to do so.
 
+
 ## Updates from re:Invent 2019
 
-## Compute Optimizer
+### Compute Optimizer
 
 One of the most exciting releases from re:Invent 2019 (in my opinion) is the [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer). I've already talked about right-sizing instances and impractical it is, however Compute Optimizer changes a few things.
 <br>
 Compute Optimizer analyzes your compute workloads, and uses machine learning to process historical utilization metrics and offer recommendations which are predicted to reduce costs and improve performance.
 
 Corey Quinn already wrote a [whole blogpost on this](https://www.lastweekinaws.com/blog/with-compute-optimizer-aws-finds-an-actual-use-for-ai-ml), which I definitely recommend checking out. You can also read more about Compute Optimizer on the [AWS News Blog](https://aws.amazon.com/blogs/aws/aws-compute-optimizer-your-customized-resource-optimization-service).
+
+### Fargate Spot
+
+...
+
+### Redshift RA3 Compute Instances
+
+...
+
+### Transit Gateway Inter-Region Peering
+
+...
+
+
+## Conclusion
+
+I don't believe there's a single tool, hack or guide 
