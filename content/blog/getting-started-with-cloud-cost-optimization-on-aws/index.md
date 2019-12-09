@@ -42,4 +42,12 @@ This means different things to different companies and organizations, but in gen
 
 One useful monitoring tool is [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets), which is built into the AWS Billing Dashboard and allows you to easily set your budget and be alerted when the current bill is exceeding your budget, or when it's predicted to do so.
 
+## Updates from re:Invent 2019
 
+## Compute Optimizer
+
+One of the most exciting releases from re:Invent 2019 (in my opinion) is the [AWS Compute Optimizer](https://aws.amazon.com/compute-optimizer). I've already talked about right-sizing instances and impractical it is, however Compute Optimizer changes a few things.
+<br>
+Compute Optimizer analyzes your compute workloads, and uses machine learning to process historical utilization metrics and offer recommendations which are predicted to reduce costs and improve performance.
+
+Corey Quinn already wrote a [whole blogpost on this](https://www.lastweekinaws.com/blog/with-compute-optimizer-aws-finds-an-actual-use-for-ai-ml), which I definitely recommend checking out. You can also read more about Compute Optimizer on the [AWS News Blog](https://aws.amazon.com/blogs/aws/aws-compute-optimizer-your-customized-resource-optimization-service).
