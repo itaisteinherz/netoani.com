@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Cost Optimization on AWS
 date: 2019-12-10T16:25:10.058Z
-description: An introductory post going over the basics of cost optimization in the cloud, and how to save money when using AWS. The post also contains an overview of related releases from re:Invent 2019.
+description: This post will go over the basics of cost optimization in the cloud, and how to save money when using AWS. It also contains an overview of related releases from re:Invent 2019.
 ---
 
 ## Prologue
