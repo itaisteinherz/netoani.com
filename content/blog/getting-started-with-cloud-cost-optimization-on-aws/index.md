@@ -31,9 +31,22 @@ I'd recommend you to read Corey Quinn's blogpost on the topic, ["Right Sizing Yo
 
 Using [spot instances](https://aws.amazon.com/ec2/spot) and [Savings Plans](https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html), you can significantly cut down on EC2 costs for predictable as well as spontaneous compute needs.
 
-If you need as much flexibility as possible, the Compute Savings Plans are the best option available, and they to apply Fargate in addition to EC2. See [the pricing page](https://aws.amazon.com/savingsplans/pricing) for more info.
+If you need as much flexibility as possible, the [Compute Savings Plans](https://aws.amazon.com/blogs/aws/new-savings-plans-for-aws-compute-services) are the best option available, and they to apply Fargate in addition to EC2. See [the pricing page](https://aws.amazon.com/savingsplans/pricing) for more info.
 
-_<Insert chart comparing sample pricing on on-demand, Savings Plans, and spot instances>_
+| | Compute Savings Plan | EC2 Instance Savings Plan |
+| --- | --- | --- |
+| <b>Term<b> | 1 Year or 3 Year |
+| <b>Platform/OS Flexibility</b>  | Yes |
+| <b>Tenancy Flexibility (Shared vs Dedicated)</b> | Yes |
+| <b>Regional availability</b> | All, except mainland China. Yes, that means GovCloud too! |
+| <b>Overage charges</b> | Spend above your commit is charged at on-demand rates |
+| <b>Region-specific</b> | No | Yes |
+| <b>Instance-specific</b> | No | Yes |
+| <b>Purchase Options</b> | No upfront, partial upfront, and all upfront |
+| <b>Discount</b> | Up to 66% | Up to 72% |
+| <b>Supports Fargate</b> | Yes | No |
+
+_Source: [Corey Quinn's post blogpost on Savings Plans](https://www.lastweekinaws.com/blog/aws-begins-sunsetting-ris-replaces-them-with-something-much-much-better)._
 
 Another alternative for EC2 is using [reserved](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html) instances, which are less flexible than the Savings Plans AWS offers, and aren't much cheaper either ([this article](https://www.gorillastack.com/news/aws-savings-plans-reserved-instances) contains a nice comparison of the two options).
 
@@ -43,6 +56,9 @@ This means different things to different companies and organizations, but in gen
 
 One useful monitoring tool is [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets), which is built into the AWS Billing Dashboard and allows you to easily set your budget and be alerted when the current bill is exceeding your budget, or when it's predicted to do so.
 
+Note that I'm mainly focused on compute costs in this blogpost since those are usually the most significant expenses users face.
+
+---
 
 ## Updates from re:Invent 2019
 
@@ -56,17 +72,15 @@ Corey Quinn already wrote a [whole blogpost on this](https://www.lastweekinaws.c
 
 ### Fargate Spot
 
-...
+Another important announcement is [Fargate Spot](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available), which basically means that you can now configure your Fargate cluster to use Spot instances when those are available, or use regular EC2 containers otherwise. Using Fargate Spot will enable users to save up to 70% (when compared to using a regular Fargate cluster). Combined with Compute Savings Plans, you can drastically cut down on Fargate costs, without compromising flexibility or elasticity.
 
-### Redshift RA3 Compute Instances
+You should also check out the new updates to [Redshift (RA3 Compute Instances)](https://aws.amazon.com/blogs/aws/amazon-redshift-update-next-generation-compute-instances-and-managed-analytics-optimized-storage) and to [Transit Gateway (Inter-region peering)](https://aws.amazon.com/blogs/aws/new-for-aws-transit-gateway-build-global-networks-and-centralize-monitoring-using-network-manager).
 
-...
-
-### Transit Gateway Inter-Region Peering
-
-...
+---
 
 
 ## Conclusion
 
-I don't believe there's a single tool, hack or guide 
+I personally think that cost optimization is less about cutting down on costs wherever possible, and more about using the right tool for the right job _(while remembering to shut down unused EC2 instances)_. Plan for the future, leave room for as much flexibility as possible, and continuously adapt your cloud usage to your needs as you go.
+
+***Big thanks to Corey Quinn for being a great resource on cloud cost optimization and inspiring me to dive into the topic.***
