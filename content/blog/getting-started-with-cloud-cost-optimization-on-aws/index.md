@@ -74,8 +74,6 @@ Corey Quinn already wrote a [whole blogpost on this](https://www.lastweekinaws.c
 
 Another important announcement is [Fargate Spot](https://aws.amazon.com/blogs/aws/aws-fargate-spot-now-generally-available), which basically means that you can now configure your Fargate cluster to use Spot instances when those are available, or use regular EC2 containers otherwise. Using Fargate Spot will enable users to save up to 70% (when compared to using a regular Fargate cluster). Combined with Compute Savings Plans, you can drastically cut down on Fargate costs, without compromising flexibility or elasticity.
 
-You should also check out the new updates to [Redshift (RA3 Compute Instances)](https://aws.amazon.com/blogs/aws/amazon-redshift-update-next-generation-compute-instances-and-managed-analytics-optimized-storage) and to [Transit Gateway (Inter-region peering)](https://aws.amazon.com/blogs/aws/new-for-aws-transit-gateway-build-global-networks-and-centralize-monitoring-using-network-manager).
-
 ---
 
 
