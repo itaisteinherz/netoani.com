@@ -47,10 +47,10 @@ class AboutPage extends React.Component {
 					/>
 					{/* eslint-disable react/jsx-child-element-spacing */}
 					<p>
-						My name is Itai Steinherz, and I&apos;m a software developer from Israel, as well as a high-school and university student. I&apos;ve been developing software for nearly 7 years, ranging from CLIs and desktop apps to full-stack mobile and backend apps. In my spare time, I like to hang out with my friends and play the piano.
+						My name is Itai Steinherz, and I&apos;m a software developer from Israel, as well as a high-school and university student. I&apos;ve been developing software for nearly 9 years, ranging from CLIs and desktop apps to full-stack mobile and backend apps. In my spare time I like to hang out with friends and play the piano.
 					</p>
 					<p>
-						I&apos;ve been contributing to and maintaining <a href="https://en.wikipedia.org/wiki/Open-source_software">OSS</a> projects for the last 4 years, and love collaborating with cool and smart people from all around the world.
+						I&apos;ve been contributing to and maintaining <a href="https://en.wikipedia.org/wiki/Open-source_software">OSS</a> projects for the last 5 years, and love collaborating with cool and smart people from all around the world.
 						<br/>
 						One of the more popular projects I maintain (along with the awesome Sindre Sorhus and Sam Verschueren) is <a href="https://github.com/sindresorhus/np"><code>np</code></a>, which is a CLI for Node.js developers that simplifies your entire publishing workflow to a single command, and includes many best practices and useful features built-in. I usually triage issues, review PRs and contribute to different parts of the codebase, while continuously working with others and maintaing a high level of code quality and architecture standards.
 						<br/>
