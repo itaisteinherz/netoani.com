@@ -47,7 +47,7 @@ function Bio() {
 								marginBottom: "auto"
 							}}
 						>
-                            I&apos;m <strong>{author}</strong>, a software developer from Israel, high-school and university student.
+                            I&apos;m <strong>{author}</strong>, a software developer from Israel.
                             You can follow me on
 							{" "}
 							<a href={`https://twitter.com/${social.twitter}`}>

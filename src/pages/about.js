@@ -47,7 +47,7 @@ class AboutPage extends React.Component {
 					/>
 					{/* eslint-disable react/jsx-child-element-spacing */}
 					<p>
-						My name is Itai Steinherz, and I&apos;m a software developer from Israel, as well as a high-school and university student. I&apos;ve been developing software for nearly 9 years, ranging from CLIs and desktop apps to full-stack mobile and backend apps. In my spare time I like to hang out with friends and play the piano.
+						My name is Itai Steinherz, and I&apos;m a young software developer from Israel. I&apos;ve been developing software for nearly 9 years, ranging from CLIs and desktop apps to full-stack mobile and backend apps. Aside coding, I also play the piano, run, and travel.
 					</p>
 					<p>
 						I&apos;ve been contributing to and maintaining <a href="https://en.wikipedia.org/wiki/Open-source_software">OSS</a> projects for the last 5 years, and love collaborating with cool and smart people from all around the world.
@@ -57,19 +57,16 @@ class AboutPage extends React.Component {
 						I also made other cool projects such as <a href="https://github.com/itaisteinherz/videos"><code>videos</code></a> and <a href="https://github.com/itaisteinherz/MChat">MChat</a>.
 					</p>
 					<p>
-						I recently participated in a <a href="https://chingu.io">Chingu</a> voyage, which is coding cohort that connects developers from all around the world and enables them to collaborate and work on products together. At my voyage, I lead a team of 5 developers from the US, Greece, Italy, and Israel. Together, we developed <a href="http://github.com/chingu-voyage7/Bears-Team-22">Knowledge</a>, an online platform for asking questions and getting answers. During the voyage I learned a lot about leading a team of developers, working around deadlines, quickly iterating over ideas, and collaborating with people coming from different backgrounds and places.
-					</p>
-					<p>
-						I always seek complex architecture challenges, and love utilizing modern approaches such as Serverless applications, Infrastructure as Code and CI/CD in my work.
+						Almost 2 years ago, I participated in a <a href="https://chingu.io">Chingu</a> collaborative coding cohort. I led a team of 5 developers from Israel, Italy, Greece, and the US. Together, we developed <a href="http://github.com/chingu-voyage7/Bears-Team-22">Knowledge</a>, an online platform for asking questions and getting answers. During the cohort I got to learn about leading a team of developers, working around deadlines, quickly iterating over ideas, and collaborating with people coming from different backgrounds and places.
 					</p>
 					<p>
 						Apart from high-level programming, I also have experience with low-level programming using C and Assembly, and like to fiddle with information security and play CTFs.
 					</p>
 					<p>
-						I currently work at <a href="https://flytrex.com">Flytrex</a> as a software developer, as part of the backend team (mainly using Python, Docker, AWS, and various other technologies and services).
+						I currently work at <a href="https://flytrex.com">Flytrex</a> as a software developer (mainly using Python, TypeScript, Docker, AWS, and various other technologies and services).
 					</p>
 					<p>
-						If you&apos;d like to contact me, feel free to do so via <a href={`mailto:${social.email}`}>email</a> or <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>. You can also find my CV <a href="/cv.pdf">here</a>.
+						If you&apos;d like to contact me, feel free to do so via <a href={`mailto:${social.email}`}>email</a> or <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>. You can also find my CV <a href="/cv.pdf">here</a> (last updated August 2019).
 					</p>
 					{/* eslint-enable react/jsx-child-element-spacing */}
 				</div>
