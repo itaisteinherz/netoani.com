@@ -11,7 +11,7 @@ FairyGates.overrideThemeStyles = () => {
 			fontSize: "0.8em",
 			marginBottom: typography.rhythm(1)
 		},
-		"blockquote": {
+		blockquote: {
 			borderLeftWidth: "5px",
 			fontSize: "1.05em"
 		},

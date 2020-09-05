@@ -1,3 +1,5 @@
+const path = require("path");
+
 /* eslint-disable camelcase */
 module.exports = {
 	siteMetadata: {
@@ -15,14 +17,14 @@ module.exports = {
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
-				path: `${__dirname}/content/blog`,
+				path: path.join(__dirname, "content", "blog"),
 				name: "blog"
 			}
 		},
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
-				path: `${__dirname}/content/assets`,
+				path: path.join(__dirname, "content", "assets"),
 				name: "assets"
 			}
 		},

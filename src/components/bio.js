@@ -47,17 +47,17 @@ function Bio() {
 								marginBottom: "auto"
 							}}
 						>
-                            I&apos;m <strong>{author}</strong>, a software developer from Israel.
-                            You can follow me on
+							I&apos;m <strong>{author}</strong>, a software developer from Israel.
+							You can follow me on
 							{" "}
 							<a href={`https://twitter.com/${social.twitter}`}>
-                                 Twitter
+								Twitter
 							</a>
 							{" "}
-                            and
+							and
 							{" "}
 							<a href={`https://github.com/${social.github}`}>
-                                GitHub
+								GitHub
 							</a>,
 							or read more about me
 							{" "}
@@ -75,24 +75,24 @@ function Bio() {
 }
 
 const bioQuery = graphql`
-    query BioQuery {
-        avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-            childImageSharp {
-                fixed(width: 400, height: 400) {
-                    ...GatsbyImageSharpFixed
-                }
-            }
-        }
-        site {
-            siteMetadata {
-                author
-                social {
+	query BioQuery {
+		avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
+			childImageSharp {
+				fixed(width: 400, height: 400) {
+					...GatsbyImageSharpFixed
+				}
+			}
+		}
+		site {
+			siteMetadata {
+				author
+				social {
 					twitter
 					github
-                }
-            }
-        }
-    }
+				}
+			}
+		}
+	}
 `;
 
 export default Bio;

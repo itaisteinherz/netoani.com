@@ -4,7 +4,13 @@ import Image from "gatsby-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import PageHeading from "../components/page-heading";
 import {rhythm} from "../utils/typography";
+
+const PAGE_TITLE = "About";
+// TODO: Automatically format the date using the same format as the one used in `blog-post.js` (instead of manually
+// doing it).
+const LAST_UPDATED_ON = "September 05, 2020";
 
 class AboutPage extends React.Component {
 	render() {
@@ -14,16 +20,14 @@ class AboutPage extends React.Component {
 		return (
 			<Layout location={this.props.location} title={title}>
 				<SEO
-					title="About"
+					title={PAGE_TITLE}
 					description="About page explaining who Itai Steinherz is."
 				/>
-				<h1
-					style={{
-						marginTop: rhythm(1.5)
-					}}
-				>
-					About
-				</h1>
+				<PageHeading
+					title={PAGE_TITLE}
+					date={LAST_UPDATED_ON}
+					datePrefix="Last updated: "
+				/>
 				<div
 					style={{
 						marginTop: rhythm(1)

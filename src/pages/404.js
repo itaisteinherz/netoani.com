@@ -14,7 +14,7 @@ class NotFoundPage extends React.Component {
 				<SEO title="404: Not Found"/>
 				<h1>Not Found</h1>
 				<p>
-                    You just hit a route that doesn&#39;t exist <span role="img" aria-label="sad">😕</span>
+					You just hit a route that doesn&#39;t exist <span role="img" aria-label="sad">😕</span>
 				</p>
 			</Layout>
 		);
@@ -24,11 +24,11 @@ class NotFoundPage extends React.Component {
 export default NotFoundPage;
 
 export const pageQuery = graphql`
-    query {
-        site {
-            siteMetadata {
-                title
-            }
-        }
-    }
+	query {
+		site {
+			siteMetadata {
+				title
+			}
+		}
+	}
 `;
