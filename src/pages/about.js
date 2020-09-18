@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import {graphql} from "gatsby";
 import Image from "gatsby-image";
 
@@ -12,7 +12,7 @@ const PAGE_TITLE = "About";
 // doing it).
 const LAST_UPDATED_ON = "September 05, 2020";
 
-class AboutPage extends React.Component {
+class AboutPage extends Component {
 	render() {
 		const {data} = this.props;
 		const {title, author, social} = data.site.siteMetadata;

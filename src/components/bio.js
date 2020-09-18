@@ -11,7 +11,7 @@ import Image from "gatsby-image";
 
 import {rhythm} from "../utils/typography";
 
-function Bio() {
+function Bio({isFullPage = false}) {
 	return (
 		<StaticQuery
 			query={bioQuery}
@@ -22,6 +22,11 @@ function Bio() {
 					<div
 						style={{
 							display: "flex",
+							...(isFullPage ? { // TODO: Create a separate component for the full page bio instead of doing this.
+								flexDirection: "column",
+								alignItems: "center",
+								textAlign: "center"
+							} : {}),
 							marginBottom: rhythm(1)
 						}}
 					>
@@ -44,7 +49,10 @@ function Bio() {
 							style={{
 								// Center text verticallly (relative to the image) - http://jsfiddle.net/Mori/Qtng7
 								marginTop: "auto",
-								marginBottom: "auto"
+								marginBottom: "auto",
+								...(isFullPage ? {
+									marginTop: rhythm(1)
+								} : {})
 							}}
 						>
 							I&apos;m <strong>{author}</strong>, a software developer from Israel.

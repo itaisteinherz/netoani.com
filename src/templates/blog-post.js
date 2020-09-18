@@ -30,7 +30,7 @@ class BlogPostTemplate extends Component {
 						marginBottom: rhythm(1)
 					}}
 				/>
-				<Bio/>
+				<Bio />
 				{ previous || next ?
 					<ul
 						style={{
