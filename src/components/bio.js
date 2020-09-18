@@ -11,7 +11,7 @@ import {StaticQuery, graphql, Link} from "gatsby";
 import AuthorImage from "./author-image";
 import {rhythm} from "../utils/typography";
 
-function Bio({isFullPage = false}) {
+function Bio() {
 	return (
 		<StaticQuery
 			query={bioQuery}
@@ -22,11 +22,6 @@ function Bio({isFullPage = false}) {
 					<div
 						style={{
 							display: "flex",
-							...(isFullPage ? { // TODO: Create a separate component for the full page bio instead of doing this.
-								flexDirection: "column",
-								alignItems: "center",
-								textAlign: "center"
-							} : {}),
 							marginBottom: rhythm(1)
 						}}
 					>
@@ -41,10 +36,7 @@ function Bio({isFullPage = false}) {
 							style={{
 								// Center text verticallly (relative to the image) - http://jsfiddle.net/Mori/Qtng7
 								marginTop: "auto",
-								marginBottom: "auto",
-								...(isFullPage ? {
-									marginTop: rhythm(1)
-								} : {})
+								marginBottom: "auto"
 							}}
 						>
 							I&apos;m <strong>{author}</strong>, a software developer from Israel.
