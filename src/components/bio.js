@@ -9,6 +9,7 @@ import React from "react";
 import {StaticQuery, graphql, Link} from "gatsby";
 
 import AuthorImage from "./author-image";
+import SocialLink from "../../src/components/social-link";
 import {rhythm} from "../utils/typography";
 
 function Bio() {
@@ -42,22 +43,15 @@ function Bio() {
 							I&apos;m <strong>{author}</strong>, a software developer from Israel.
 							You can follow me on
 							{" "}
-							<a href={`https://twitter.com/${social.twitter}`}>
+							<SocialLink service="twitter">
 								Twitter
-							</a>
+							</SocialLink>
 							{" "}
 							and
 							{" "}
-							<a href={`https://github.com/${social.github}`}>
+							<SocialLink service="github">
 								GitHub
-							</a>,
-							or read more about me
-							{" "}
-							<Link
-								to="/about"
-							>
-								here
-							</Link>.
+							</SocialLink>.
 						</p>
 					</div>
 				);

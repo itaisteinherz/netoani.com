@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PageHeading from "../components/page-heading";
 import AuthorImage from "../components/author-image";
+import SocialLink from "../../src/components/social-link";
 import {rhythm} from "../utils/typography";
 
 const PAGE_TITLE = "About";
@@ -62,7 +63,7 @@ class AboutPage extends Component {
 						I currently work as a software developer at <a href="https://flytrex.com">Flytrex</a>, an Israeli startup focused on making drone deliveries a reality. At work, I mostly use Python, TypeScript, Docker, and AWS (as well as other technologies and services).
 					</p>
 					<p>
-						If you&apos;d like to contact me, feel free to do so via <a href={`mailto:${social.email}`}>email</a> or <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>. You can also find my CV <a href="/cv.pdf">here</a> (last updated August 2019).
+						If you&apos;d like to contact me, feel free to do so via <SocialLink service="email">email</SocialLink> or <SocialLink service="twitter">Twitter</SocialLink>. You can also find my CV <a href="/cv.pdf">here</a> (last updated August 2019).
 					</p>
 					{/* eslint-enable react/jsx-child-element-spacing */}
 				</div>

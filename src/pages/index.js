@@ -3,13 +3,14 @@ import {Link, graphql} from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import AuthorImage from "../components/author-image";
+import IndexPageContent from "../../content/index-page/index.mdx";
+
 import {rhythm} from "../utils/typography";
 
 class Homepage extends Component {
 	render() {
 		const {data} = this.props;
-		const {title, author, social} = data.site.siteMetadata;
+		const {title} = data.site.siteMetadata;
 
 		return (
 			<Layout location={this.props.location} title={title}>
@@ -19,43 +20,13 @@ class Homepage extends Component {
 					style={{
 						display: "flex",
 						flexDirection: "column",
-						alignItems: "center",
-						textAlign: "center",
-						marginTop: rhythm(6) // TODO: Find a way to properly center this.
+						marginTop: rhythm(3), // TODO: Find a way to properly center this.
+						marginRight: "auto",
+						marginLeft: "auto",
+						maxWidth: rhythm(20)
 					}}
 				>
-					<div
-						style={{
-							marginRight: rhythm(1 / 2)
-						}}
-					>
-						<AuthorImage />
-					</div>
-					<p
-						style={{
-							marginTop: rhythm(1)
-						}}
-					>
-						I&apos;m <strong>{author}</strong>, a software developer from Israel.
-						You can follow me on
-						{" "}
-						<a href={`https://twitter.com/${social.twitter}`}>
-							Twitter
-						</a>
-						{" "}
-						and
-						{" "}
-						<a href={`https://github.com/${social.github}`}>
-							GitHub
-						</a>,
-						or read more about me
-						{" "}
-						<Link
-							to="/about"
-						>
-							here
-						</Link>.
-					</p>
+				<IndexPageContent />
 				</div>
 			</Layout>
 		);
@@ -69,11 +40,6 @@ export const pageQuery = graphql`
 		site {
 			siteMetadata {
 				title
-				author
-				social {
-					twitter
-					github
-				}
 			}
 		}
 	}
