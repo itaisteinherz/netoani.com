@@ -15,7 +15,10 @@ class Blog extends Component {
 
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
-				<SEO title={PAGE_TITLE} />
+				<SEO
+					title={PAGE_TITLE}
+					description="Itai Steinherz's blog homepage, listing all of the blogposts he wrote."
+				/>
 				{posts.map(({node}) => {
 					const title = node.frontmatter.title || node.fields.slug;
 					return (

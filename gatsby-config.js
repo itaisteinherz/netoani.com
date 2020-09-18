@@ -5,7 +5,7 @@ module.exports = {
 	siteMetadata: {
 		title: "netoani.com",
 		author: "Itai Steinherz",
-		description: "Itai Steinherz's blog",
+		description: "Itai Steinherz's website",
 		siteUrl: "https://netoani.com",
 		social: {
 			twitter: "itaisteinherz",

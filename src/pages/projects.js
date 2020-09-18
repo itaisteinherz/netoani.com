@@ -11,7 +11,10 @@ class ProjectsPage extends Component {
 
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
-				<SEO title={siteTitle} />
+				<SEO
+					title={siteTitle}
+					description="A page listing Itai Steinherz's projects."
+				/>
 
 				TODO: Add some stuff here...
 			</Layout>
