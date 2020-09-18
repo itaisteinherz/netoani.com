@@ -70,7 +70,7 @@ class Layout extends Component {
 					}}
 				>
 					{siteHeader}
-					<SiteNav location={location} />
+					<SiteNav location={location}/>
 				</header>
 				<main>{children}</main>
 			</div>

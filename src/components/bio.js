@@ -6,7 +6,7 @@
  */
 
 import React from "react";
-import {StaticQuery, graphql, Link} from "gatsby";
+import {StaticQuery, graphql} from "gatsby";
 
 import AuthorImage from "./author-image";
 import SocialLink from "../../src/components/social-link";
@@ -17,7 +17,7 @@ function Bio() {
 		<StaticQuery
 			query={bioQuery}
 			render={data => {
-				const {author, social} = data.site.siteMetadata;
+				const {author} = data.site.siteMetadata;
 
 				return (
 					<div
@@ -31,7 +31,7 @@ function Bio() {
 								marginRight: rhythm(1 / 2)
 							}}
 						>
-							<AuthorImage />
+							<AuthorImage/>
 						</div>
 						<p
 							style={{
@@ -65,10 +65,6 @@ const bioQuery = graphql`
 		site {
 			siteMetadata {
 				author
-				social {
-					twitter
-					github
-				}
 			}
 		}
 	}

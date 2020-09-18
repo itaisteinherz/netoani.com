@@ -16,7 +16,7 @@ const LAST_UPDATED_ON = "September 05, 2020";
 class AboutPage extends Component {
 	render() {
 		const {data} = this.props;
-		const {title, social} = data.site.siteMetadata;
+		const {title} = data.site.siteMetadata;
 
 		return (
 			<Layout location={this.props.location} title={title}>
@@ -40,7 +40,7 @@ class AboutPage extends Component {
 							float: "left"
 						}}
 					>
-						<AuthorImage />
+						<AuthorImage/>
 					</div>
 					{/* eslint-disable react/jsx-child-element-spacing */}
 					<p>
@@ -79,10 +79,6 @@ export const pageQuery = graphql`
 		site {
 			siteMetadata {
 				title
-				social {
-					twitter
-					email
-				}
 			}
 		}
 	}

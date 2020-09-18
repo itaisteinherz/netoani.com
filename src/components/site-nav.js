@@ -39,8 +39,8 @@ function SiteNav({location}) {
 				marginBottom: rhythm(0.5)
 			}}
 		>
-			<NavItem title="Blog" path="/blog" location={location} />
-			<NavItem title="Projects" path="/projects" location={location} />
+			<NavItem title="Blog" path="/blog" location={location}/>
+			<NavItem title="Projects" path="/projects" location={location}/>
 		</div>
 	);
 }

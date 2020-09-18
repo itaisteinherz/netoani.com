@@ -92,6 +92,13 @@
 					"namedComponents": "function-declaration",
 					"unnamedComponents": "arrow-function"
 				}
+			],
+			"import/extensions": [
+				"error",
+				{
+					"mdx": "always",
+					"css": "always"
+				}
 			]
 		}
 	}

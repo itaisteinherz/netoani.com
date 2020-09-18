@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Link, graphql} from "gatsby";
+import {graphql} from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,7 +14,7 @@ class Homepage extends Component {
 
 		return (
 			<Layout location={this.props.location} title={title}>
-				<SEO title={title} />
+				<SEO title={title}/>
 
 				<div
 					style={{
@@ -26,7 +26,7 @@ class Homepage extends Component {
 						maxWidth: rhythm(20)
 					}}
 				>
-				<IndexPageContent />
+					<IndexPageContent/>
 				</div>
 			</Layout>
 		);
