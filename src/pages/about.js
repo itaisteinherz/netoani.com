@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import {graphql} from "gatsby";
-import Image from "gatsby-image";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import PageHeading from "../components/page-heading";
+import AuthorImage from "../components/author-image";
 import {rhythm} from "../utils/typography";
 
 const PAGE_TITLE = "About";
@@ -15,7 +15,7 @@ const LAST_UPDATED_ON = "September 05, 2020";
 class AboutPage extends Component {
 	render() {
 		const {data} = this.props;
-		const {title, author, social} = data.site.siteMetadata;
+		const {title, social} = data.site.siteMetadata;
 
 		return (
 			<Layout location={this.props.location} title={title}>
@@ -33,22 +33,14 @@ class AboutPage extends Component {
 						marginTop: rhythm(1)
 					}}
 				>
-					<Image
-						fixed={data.avatar.childImageSharp.fixed}
-						alt={author}
+					<div
 						style={{
 							marginRight: rhythm(1 / 2),
-							marginBottom: 0,
-							maxHeight: 100,
-							minWidth: 100,
-							maxWidth: 100,
-							borderRadius: "100%",
 							float: "left"
 						}}
-						imgStyle={{
-							borderRadius: "50%"
-						}}
-					/>
+					>
+						<AuthorImage />
+					</div>
 					{/* eslint-disable react/jsx-child-element-spacing */}
 					<p>
 						My name is Itai Steinherz, and I&apos;m a young software developer from Israel. I&apos;ve been developing software for nearly 9 years, ranging from CLIs and desktop apps to full-stack mobile and backend apps. Aside coding, I also play the piano, run, and travel.
@@ -83,17 +75,9 @@ export default AboutPage;
 
 export const pageQuery = graphql`
     query {
-		avatar: file(absolutePath: {regex: "/profile-pic.jpg/"}) {
-			childImageSharp {
-				fixed(width: 400, height: 400) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
 		site {
 			siteMetadata {
 				title
-				author
 				social {
 					twitter
 					email

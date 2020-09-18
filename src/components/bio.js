@@ -7,8 +7,8 @@
 
 import React from "react";
 import {StaticQuery, graphql, Link} from "gatsby";
-import Image from "gatsby-image";
 
+import AuthorImage from "./author-image";
 import {rhythm} from "../utils/typography";
 
 function Bio({isFullPage = false}) {
@@ -30,21 +30,13 @@ function Bio({isFullPage = false}) {
 							marginBottom: rhythm(1)
 						}}
 					>
-						<Image
-							fixed={data.avatar.childImageSharp.fixed}
-							alt={author}
+						<div
 							style={{
-								marginRight: rhythm(1 / 2),
-								marginBottom: 0,
-								maxHeight: 100,
-								minWidth: 100,
-								maxWidth: 100,
-								borderRadius: "100%"
+								marginRight: rhythm(1 / 2)
 							}}
-							imgStyle={{
-								borderRadius: "50%"
-							}}
-						/>
+						>
+							<AuthorImage />
+						</div>
 						<p
 							style={{
 								// Center text verticallly (relative to the image) - http://jsfiddle.net/Mori/Qtng7
@@ -84,13 +76,6 @@ function Bio({isFullPage = false}) {
 
 const bioQuery = graphql`
 	query BioQuery {
-		avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-			childImageSharp {
-				fixed(width: 400, height: 400) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
 		site {
 			siteMetadata {
 				author
