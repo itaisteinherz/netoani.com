@@ -14,6 +14,7 @@ function AuthorImage() {
 						fixed={data.avatar.childImageSharp.fixed}
 						alt={author}
 						style={{
+							display: "block",
 							margin: 0,
 							maxHeight: 100,
 							minWidth: 100,

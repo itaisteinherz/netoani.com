@@ -17,7 +17,7 @@ class Layout extends Component {
 						...scale(1.5),
 						marginTop: 0,
 						marginRight: rhythm(3),
-						marginBottom: rhythm(1)
+						marginBottom: rhythm(1.5)
 					}}
 				>
 					<Link
