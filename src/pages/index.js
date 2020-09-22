@@ -21,17 +21,9 @@ class Homepage extends Component {
 						display: "flex",
 						flexDirection: "column",
 						alignItems: "center",
-						textAlign: "center",
-						marginTop: rhythm(6) // TODO: Find a way to properly center this.
+						textAlign: "center"
 					}}
 				>
-					<div
-						style={{
-							marginRight: rhythm(1 / 2)
-						}}
-					>
-						<AuthorImage />
-					</div>
 					<Bio/>
 				</div>
 			</Layout>

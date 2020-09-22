@@ -3,33 +3,23 @@ import {Link} from "gatsby";
 
 import {rhythm} from "../utils/typography";
 
-function NavItem({title, path, location}) {
+function NavItem({title, path}) {
 	return (
 		<div
 			style={{
 				marginLeft: rhythm(1)
 			}}
 		>
-			{location.pathname === path ? (
-				<span
-					style={{
-						opacity: 0.5
-					}}
-				>
-					{title}
-				</span>
-			) : (
-				<Link
-					to={path}
-				>
-					{title}
-				</Link>
-			)}
+			<Link
+				to={path}
+			>
+				{title}
+			</Link>
 		</div>
 	);
 }
 
-function SiteNav({location}) {
+function SiteNav({}) {
 	return (
 		<div
 			style={{
@@ -39,8 +29,8 @@ function SiteNav({location}) {
 				marginBottom: rhythm(0.5)
 			}}
 		>
-			<NavItem title="Blog" path="/blog" location={location}/>
-			<NavItem title="Projects" path="/projects" location={location}/>
+			{/* <NavItem title="Blog" path="/blog"/> */}
+			<NavItem title="Projects" path="/projects"/>
 		</div>
 	);
 }
