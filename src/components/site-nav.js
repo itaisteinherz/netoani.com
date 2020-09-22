@@ -19,7 +19,7 @@ function NavItem({title, path}) {
 	);
 }
 
-function SiteNav({}) {
+function SiteNav() {
 	return (
 		<div
 			style={{

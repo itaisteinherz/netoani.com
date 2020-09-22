@@ -6,51 +6,7 @@ import {rhythm, scale} from "../utils/typography";
 
 class Layout extends Component {
 	render() {
-		const {location, title, children} = this.props;
-		const rootPath = `${__PATH_PREFIX__}/`; // eslint-disable-line no-undef
-		let siteHeader;
-
-		if (location.pathname === rootPath) {
-			siteHeader = (
-				<h1
-					style={{
-						...scale(1.5),
-						marginTop: 0,
-						marginRight: rhythm(3),
-						marginBottom: rhythm(1.5)
-					}}
-				>
-					<Link
-						style={{
-							color: "inherit"
-						}}
-						to="/"
-					>
-						{title}
-					</Link>
-				</h1>
-			);
-		} else {
-			siteHeader = (
-				<h3
-					style={{
-						...scale(1 / 2),
-						marginTop: 0,
-						marginRight: rhythm(2),
-						marginBottom: rhythm(0.5)
-					}}
-				>
-					<Link
-						style={{
-							color: "inherit"
-						}}
-						to="/"
-					>
-						{title}
-					</Link>
-				</h3>
-			);
-		}
+		const {title, children} = this.props;
 
 		return (
 			<div
@@ -69,7 +25,23 @@ class Layout extends Component {
 						flexWrap: "wrap"
 					}}
 				>
-					{siteHeader}
+					<h1
+						style={{
+							...scale(5 / 6),
+							marginTop: 0,
+							marginRight: rhythm(1),
+							marginBottom: rhythm(1)
+						}}
+					>
+						<Link
+							style={{
+								color: "inherit"
+							}}
+							to="/"
+						>
+							{title}
+						</Link>
+					</h1>
 					<SiteNav/>
 				</header>
 				<main>{children}</main>
