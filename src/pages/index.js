@@ -9,7 +9,7 @@ import {rhythm} from "../utils/typography";
 class Homepage extends Component {
 	render() {
 		const {data} = this.props;
-		const {title, author, social} = data.site.siteMetadata;
+		const {title} = data.site.siteMetadata;
 
 		return (
 			<Layout location={this.props.location} title={title}>
@@ -31,31 +31,7 @@ class Homepage extends Component {
 					>
 						<AuthorImage />
 					</div>
-					<p
-						style={{
-							marginTop: rhythm(1)
-						}}
-					>
-						I&apos;m <strong>{author}</strong>, a software developer from Israel.
-						You can follow me on
-						{" "}
-						<a href={`https://twitter.com/${social.twitter}`}>
-							Twitter
-						</a>
-						{" "}
-						and
-						{" "}
-						<a href={`https://github.com/${social.github}`}>
-							GitHub
-						</a>,
-						or read more about me
-						{" "}
-						<Link
-							to="/about"
-						>
-							here
-						</Link>.
-					</p>
+					<Bio/>
 				</div>
 			</Layout>
 		);
@@ -69,11 +45,6 @@ export const pageQuery = graphql`
 		site {
 			siteMetadata {
 				title
-				author
-				social {
-					twitter
-					github
-				}
 			}
 		}
 	}
