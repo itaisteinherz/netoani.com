@@ -29,7 +29,7 @@ function SiteNav({}) {
 				marginBottom: rhythm(0.5)
 			}}
 		>
-			{/* <NavItem title="Blog" path="/blog"/> */}
+			<NavItem title="About" path="/about"/>
 			<NavItem title="Projects" path="/projects"/>
 		</div>
 	);
