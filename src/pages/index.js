@@ -3,6 +3,7 @@ import {graphql} from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Bio from "../components/bio";
 import AuthorImage from "../components/author-image";
 import {rhythm} from "../utils/typography";
 
