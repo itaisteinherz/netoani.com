@@ -4,6 +4,7 @@ import {Link, graphql} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Bio from "../components/bio";
+import StyledDate from "../components/styled-date";
 import {rhythm} from "../utils/typography";
 
 class Homepage extends Component {
@@ -40,7 +41,7 @@ class Homepage extends Component {
  									{title}
  								</Link>
  							</h2>
- 							<small>{node.frontmatter.date}</small>
+							<StyledDate date={node.frontmatter.date}/>
  							<p
  								dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
  									__html: node.frontmatter.description || node.excerpt

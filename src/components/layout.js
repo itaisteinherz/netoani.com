@@ -27,7 +27,7 @@ class Layout extends Component {
 				>
 					<h1
 						style={{
-							...scale(5 / 6),
+							...scale(1 / 4),
 							marginTop: 0,
 							marginRight: rhythm(1),
 							marginBottom: rhythm(1)

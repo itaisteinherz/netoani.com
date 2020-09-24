@@ -13,6 +13,21 @@ const PAGE_TITLE = "About";
 // doing it).
 const LAST_UPDATED_ON = "September 05, 2020";
 
+
+/* TODO: Put this in the about page
+
+
+Hi!
+I'm Itai Steinherz, a software engineer from Israel, currently working at Flytrex. I develop full-stack apps, maintain some OSS projects, and enjoy life. This website contains details on some of my projects, as well as my thoughts and experiences from working as a software engineer.
+
+(or something similar.)
+
+
+Then, I can put the specifics in a <details> sort of block.
+
+
+*/
+
 class AboutPage extends Component {
 	render() {
 		const {data} = this.props;
