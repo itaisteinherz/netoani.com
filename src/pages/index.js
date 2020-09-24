@@ -11,7 +11,7 @@ class Homepage extends Component {
 	render() {
 		const {data} = this.props;
 		const siteTitle = data.site.siteMetadata.title;
- 		const posts = data.allMarkdownRemark.edges;
+		const posts = data.allMarkdownRemark.edges;
 
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
@@ -26,30 +26,30 @@ class Homepage extends Component {
 
 				{/* TODO: Place these in a container div, and create a component for a blogpost row */}
 				{posts.map(({node}) => {
- 					const title = node.frontmatter.title || node.fields.slug;
- 					return (
- 						<div key={node.fields.slug}>
- 							<h2
- 								style={{
- 									marginBottom: rhythm(1 / 2)
- 								}}
- 							>
- 								<Link
- 									style={{boxShadow: "none"}}
- 									to={`/blog${node.fields.slug}`}
- 								>
- 									{title}
- 								</Link>
- 							</h2>
+					const title = node.frontmatter.title || node.fields.slug;
+					return (
+						<div key={node.fields.slug}>
+							<h2
+								style={{
+									marginBottom: rhythm(1 / 2)
+								}}
+							>
+								<Link
+									style={{boxShadow: "none"}}
+									to={`/blog${node.fields.slug}`}
+								>
+									{title}
+								</Link>
+							</h2>
 							<StyledDate date={node.frontmatter.date}/>
- 							<p
- 								dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
- 									__html: node.frontmatter.description || node.excerpt
- 								}}
- 							/>
- 						</div>
- 					);
- 				})}
+							<p
+								dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
+									__html: node.frontmatter.description || node.excerpt
+								}}
+							/>
+						</div>
+					);
+				})}
 			</Layout>
 		);
 	}
