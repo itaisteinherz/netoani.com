@@ -9,7 +9,7 @@ import AboutPageContent from "../../content/about-page/index.mdx";
 const PAGE_TITLE = "About";
 // TODO: Automatically format the date using the same format as the one used in `blog-post.js` (instead of manually
 // doing it).
-const LAST_UPDATED_ON = "September 05, 2020";
+const LAST_UPDATED_ON = "September 25, 2020";
 
 class AboutPage extends Component {
 	render() {
