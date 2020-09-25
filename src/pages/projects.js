@@ -13,7 +13,7 @@ class ProjectsPage extends Component {
 			<Layout location={this.props.location} title={siteTitle}>
 				<SEO
 					title={siteTitle}
-					description="A page listing Itai Steinherz's projects."
+					description="A page listing some of Itai Steinherz's projects."
 				/>
 
 				TODO: Add some stuff here...
