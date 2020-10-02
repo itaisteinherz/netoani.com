@@ -23,7 +23,8 @@
 		"gatsby",
 		"blog",
 		"personal",
-		"programming"
+		"programming",
+		"thoughts"
 	],
 	"dependencies": {
 		"@mdx-js/mdx": "^1.6.18",
