@@ -3,6 +3,8 @@ import {graphql} from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import PageHeading from "../components/page-heading";
+import ProjectsPageContent from "../../content/projects-page/index.mdx";
 
 class ProjectsPage extends Component {
 	render() {
@@ -15,8 +17,8 @@ class ProjectsPage extends Component {
 					title={siteTitle}
 					description="A page listing some of Itai Steinherz's projects."
 				/>
-
-				TODO: Add some stuff here...
+				<PageHeading title="Projects"/>
+				<ProjectsPageContent/>
 			</Layout>
 		);
 	}

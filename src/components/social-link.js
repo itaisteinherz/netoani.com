@@ -1,13 +1,13 @@
 import React from "react";
 import {StaticQuery, graphql} from "gatsby";
 
-function SocialLink({service, children}) {
+function SocialLink({service, urlPath = "", children}) {
 	return (
 		<StaticQuery
 			query={socialLinkQuery}
 			render={data => {
 				const {social} = data.site.siteMetadata;
-				const url = social[service];
+				const url = social[service] + urlPath;
 
 				return (
 					<a href={url}>
