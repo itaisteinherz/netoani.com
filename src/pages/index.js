@@ -16,13 +16,7 @@ class Homepage extends Component {
 		return (
 			<Layout location={this.props.location} title={siteTitle}>
 				<SEO title={siteTitle}/>
-				<div
-					style={{
-						marginTop: rhythm(1)
-					}}
-				>
-					<Bio/>
-				</div>
+				<Bio/>
 
 				{/* TODO: Place these in a container div, and create a component for a blogpost row */}
 				{posts.map(({node}) => {
@@ -41,7 +35,13 @@ class Homepage extends Component {
 									{title}
 								</Link>
 							</h2>
-							<StyledDate date={node.frontmatter.date}/>
+							<div
+								style={{
+									marginTop: rhythm(1)
+								}}
+							>
+								<StyledDate date={node.frontmatter.date}/>
+							</div>
 							<p
 								dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
 									__html: node.frontmatter.description || node.excerpt

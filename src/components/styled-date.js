@@ -11,7 +11,7 @@ function StyledDate({date, datePrefix = ""}) {
 				lineHeight: 1,
 				fontWeight: 500,
 				color: gray(45),
-				marginTop: rhythm(1),
+				marginTop: 0,
 				marginBottom: rhythm(1 / 5)
 			}}
 		>

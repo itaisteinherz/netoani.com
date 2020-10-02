@@ -25,8 +25,7 @@ function SiteNav() {
 			style={{
 				display: "flex",
 				justifyContent: "flex-end",
-				flexGrow: 1,
-				marginBottom: rhythm(0.5)
+				flexGrow: 1
 			}}
 		>
 			<NavItem title="About" path="/about"/>

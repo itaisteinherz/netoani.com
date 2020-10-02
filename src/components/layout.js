@@ -22,7 +22,8 @@ class Layout extends Component {
 						display: "flex",
 						alignItems: "baseline",
 						justifyContent: "space-between",
-						flexWrap: "wrap"
+						flexWrap: "wrap",
+						marginBottom: rhythm(2)
 					}}
 				>
 					<h1
@@ -30,7 +31,7 @@ class Layout extends Component {
 							...scale(1 / 4),
 							marginTop: 0,
 							marginRight: rhythm(1),
-							marginBottom: rhythm(1)
+							marginBottom: 0
 						}}
 					>
 						<Link
