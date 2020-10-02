@@ -2,10 +2,12 @@ import React from "react";
 import StyledDate from "../components/styled-date";
 import {rhythm, scale} from "../utils/typography";
 
-function PageHeading({title, date, datePrefix = ""}) {
+function PageHeading({title, date = null, datePrefix = ""}) {
 	return (
 		<div>
-			<StyledDate date={date} datePrefix={datePrefix}/>
+			{date ? 
+				<StyledDate date={date} datePrefix={datePrefix}/>
+			: null}
 			<h1
 				style={{
 					fontSize: scale(6 / 5).fontSize,
