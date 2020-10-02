@@ -6,9 +6,10 @@
  */
 
 import React from "react";
-import {StaticQuery, graphql, Link} from "gatsby";
-import Image from "gatsby-image";
+import {StaticQuery, graphql} from "gatsby";
 
+import AuthorImage from "./author-image";
+import SocialLink from "../../src/components/social-link";
 import {rhythm} from "../utils/typography";
 
 function Bio() {
@@ -16,7 +17,7 @@ function Bio() {
 		<StaticQuery
 			query={bioQuery}
 			render={data => {
-				const {author, social} = data.site.siteMetadata;
+				const {author} = data.site.siteMetadata;
 
 				return (
 					<div
@@ -25,21 +26,13 @@ function Bio() {
 							marginBottom: rhythm(1)
 						}}
 					>
-						<Image
-							fixed={data.avatar.childImageSharp.fixed}
-							alt={author}
+						<div
 							style={{
-								marginRight: rhythm(1 / 2),
-								marginBottom: 0,
-								maxHeight: 100,
-								minWidth: 100,
-								maxWidth: 100,
-								borderRadius: "100%"
+								marginRight: rhythm(1 / 2)
 							}}
-							imgStyle={{
-								borderRadius: "50%"
-							}}
-						/>
+						>
+							<AuthorImage/>
+						</div>
 						<p
 							style={{
 								// Center text verticallly (relative to the image) - http://jsfiddle.net/Mori/Qtng7
@@ -50,22 +43,15 @@ function Bio() {
 							I&apos;m <strong>{author}</strong>, a software developer from Israel.
 							You can follow me on
 							{" "}
-							<a href={`https://twitter.com/${social.twitter}`}>
+							<SocialLink service="twitter">
 								Twitter
-							</a>
+							</SocialLink>
 							{" "}
 							and
 							{" "}
-							<a href={`https://github.com/${social.github}`}>
+							<SocialLink service="github">
 								GitHub
-							</a>,
-							or read more about me
-							{" "}
-							<Link
-								to="/about"
-							>
-								here
-							</Link>.
+							</SocialLink>.
 						</p>
 					</div>
 				);
@@ -76,20 +62,9 @@ function Bio() {
 
 const bioQuery = graphql`
 	query BioQuery {
-		avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-			childImageSharp {
-				fixed(width: 400, height: 400) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
 		site {
 			siteMetadata {
 				author
-				social {
-					twitter
-					github
-				}
 			}
 		}
 	}

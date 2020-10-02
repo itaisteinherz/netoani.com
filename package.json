@@ -1,6 +1,6 @@
 {
 	"name": "netoani.com",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"private": true,
 	"description": "Itai Steinherz's website",
 	"license": "MIT",
@@ -26,11 +26,14 @@
 		"programming"
 	],
 	"dependencies": {
+		"@mdx-js/mdx": "^1.6.18",
+		"@mdx-js/react": "^1.6.18",
 		"gatsby": "^2.9.4",
 		"gatsby-image": "^2.1.4",
 		"gatsby-plugin-feed": "^2.2.3",
 		"gatsby-plugin-google-analytics": "^2.0.21",
 		"gatsby-plugin-manifest": "^2.1.1",
+		"gatsby-plugin-mdx": "^1.2.40",
 		"gatsby-plugin-offline": "^2.1.3",
 		"gatsby-plugin-react-helmet": "^3.0.12",
 		"gatsby-plugin-sharp": "^2.1.5",
@@ -43,6 +46,7 @@
 		"gatsby-source-filesystem": "^2.0.39",
 		"gatsby-transformer-remark": "^2.4.0",
 		"gatsby-transformer-sharp": "^2.1.21",
+		"gray-percentage": "^2.0.0",
 		"prismjs": "^1.16.0",
 		"prop-types": "^15.7.2",
 		"react": "^16.8.6",
@@ -88,6 +92,13 @@
 				{
 					"namedComponents": "function-declaration",
 					"unnamedComponents": "arrow-function"
+				}
+			],
+			"import/extensions": [
+				"error",
+				{
+					"mdx": "always",
+					"css": "always"
 				}
 			]
 		}

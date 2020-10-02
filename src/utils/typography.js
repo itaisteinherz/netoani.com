@@ -16,7 +16,17 @@ FairyGates.overrideThemeStyles = () => {
 			fontSize: "1.05em"
 		},
 		"blockquote > ul": {
-			marginLeft: "1.2em"
+			marginLeft: typography.rhythm(4 / 5)
+		},
+		details: {
+			marginBottom: typography.rhythm(1)
+		},
+		"details > summary": {
+			fontWeight: "bold",
+			marginBottom: typography.rhythm(1 / 4)
+		},
+		"details > *:last-child": {
+			marginBottom: 0
 		}
 	};
 };
@@ -33,5 +43,4 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 export default typography;
-export const {rhythm} = typography;
-export const {scale} = typography;
+export const {rhythm, scale} = typography;

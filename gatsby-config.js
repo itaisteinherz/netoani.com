@@ -5,12 +5,12 @@ module.exports = {
 	siteMetadata: {
 		title: "netoani.com",
 		author: "Itai Steinherz",
-		description: "Itai Steinherz's blog",
+		description: "Itai Steinherz's website",
 		siteUrl: "https://netoani.com",
 		social: {
-			twitter: "itaisteinherz",
-			github: "itaisteinherz",
-			email: "itai.steinherz@gmail.com"
+			twitter: "https://twitter.com/itaisteinherz",
+			github: "https://github.com/itaisteinherz",
+			email: "mailto:itai.steinherz@gmail.com"
 		}
 	},
 	plugins: [
@@ -45,6 +45,7 @@ module.exports = {
 				]
 			}
 		},
+		"gatsby-plugin-mdx",
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-sharp",
 		{

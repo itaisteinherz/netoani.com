@@ -1,51 +1,12 @@
-import React from "react";
+import React, {Component} from "react";
 import {Link} from "gatsby";
 
+import SiteNav from "./site-nav";
 import {rhythm, scale} from "../utils/typography";
 
-class Layout extends React.Component {
+class Layout extends Component {
 	render() {
-		const {location, title, children} = this.props;
-		const rootPath = `${__PATH_PREFIX__}/`; // eslint-disable-line no-undef
-		let header;
-
-		if (location.pathname === rootPath) {
-			header = (
-				<h1
-					style={{
-						...scale(1.5),
-						marginBottom: rhythm(1.5),
-						marginTop: 0
-					}}
-				>
-					<Link
-						style={{
-							color: "inherit"
-						}}
-						to="/"
-					>
-						{title}
-					</Link>
-				</h1>
-			);
-		} else {
-			header = (
-				<h3
-					style={{
-						marginTop: 0
-					}}
-				>
-					<Link
-						style={{
-							color: "inherit"
-						}}
-						to="/"
-					>
-						{title}
-					</Link>
-				</h3>
-			);
-		}
+		const {title, children} = this.props;
 
 		return (
 			<div
@@ -56,7 +17,34 @@ class Layout extends React.Component {
 					padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
 				}}
 			>
-				<header>{header}</header>
+				<header
+					style={{
+						display: "flex",
+						alignItems: "baseline",
+						justifyContent: "space-between",
+						flexWrap: "wrap",
+						marginBottom: rhythm(2)
+					}}
+				>
+					<h1
+						style={{
+							...scale(1 / 4),
+							marginTop: 0,
+							marginRight: rhythm(1),
+							marginBottom: 0
+						}}
+					>
+						<Link
+							style={{
+								color: "inherit"
+							}}
+							to="/"
+						>
+							{title}
+						</Link>
+					</h1>
+					<SiteNav/>
+				</header>
 				<main>{children}</main>
 			</div>
 		);
