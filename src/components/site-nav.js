@@ -29,7 +29,6 @@ function SiteNav() {
 			}}
 		>
 			<NavItem title="About" path="/about"/>
-			{/* <NavItem title="Projects" path="/projects"/> */}
 		</div>
 	);
 }
