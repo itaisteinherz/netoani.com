@@ -17,6 +17,11 @@ class Homepage extends Component {
 			<Layout location={this.props.location} title={siteTitle}>
 				<SEO title={siteTitle}/>
 				<Bio/>
+				<hr
+					style={{
+						marginBottom: 0
+					}}
+				/>
 
 				{/* TODO: Place these in a container div, and create a component for a blogpost row */}
 				{posts.map(({node}) => {
