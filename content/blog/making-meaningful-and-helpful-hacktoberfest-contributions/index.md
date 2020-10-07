@@ -1,7 +1,7 @@
 ---
 title: Making Meaningful and Helpful Hacktoberfest Contributions
-date: 2020-10-06T20:10:49.397Z
-description: This post will go over how I look at open-source in general and Hacktoberfest more specifically, and how you can take part in improving the software world.
+date: 2020-10-07T13:29:58.649Z
+description: This post will go over how I look at open-source in general and Hacktoberfest more specifically, and how you can leave a meaningful impact on OSS projects.
 ---
 
 ## Motivation for this post
