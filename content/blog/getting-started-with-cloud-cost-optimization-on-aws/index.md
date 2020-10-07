@@ -81,4 +81,4 @@ Another important announcement is [Fargate Spot](https://aws.amazon.com/blogs/aw
 
 I personally think that cost optimization is less about cutting down on costs wherever possible, and more about using the right tool for the right job _(while remembering to shut down unused EC2 instances)_. Plan for the future, leave room for as much flexibility as possible, and continuously adapt your cloud usage to your needs as you go.
 
-***Big thanks to Corey Quinn for being a great resource on cloud cost optimization and inspiring me to dive into the topic.***
+***Big thanks to [Corey Quinn](https://twitter.com/QuinnyPig) for being a great resource on cloud cost optimization and inspiring me to dive into the topic.***
