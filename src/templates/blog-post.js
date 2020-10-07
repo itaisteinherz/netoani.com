@@ -38,17 +38,26 @@ class BlogPostTemplate extends Component {
 							flexWrap: "wrap",
 							justifyContent: "space-between",
 							listStyle: "none",
+							margin: `0 0 ${rhythm(1)}`,
 							padding: 0
 						}}
 					>
-						<li>
+						<li
+							style={{
+								marginRight: rhythm(1.5)
+							}}
+						>
 							{previous ? (
 								<Link to={`/blog${previous.fields.slug}`} rel="prev">
 									← {previous.frontmatter.title}
 								</Link>
 							) : null}
 						</li>
-						<li>
+						<li
+							style={{
+								marginLeft: "auto"
+							}}
+						>
 							{next ? (
 								<Link to={`/blog${next.fields.slug}`} rel="next">
 									{next.frontmatter.title} →
