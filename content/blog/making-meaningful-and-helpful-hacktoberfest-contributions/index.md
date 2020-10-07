@@ -59,4 +59,4 @@ Contributing OSS is a marathon, not a sprint. Some PRs take many months and even
 
 ## Conclusion
 
-Props to you for going through this whole post! I truly appreciate people putting their time into OSS, and think that everyone can be a meaningful part of the community. I hope you learned a think or two reading this, and that you feel better equipped to start getting involved in OSS.
+Props to you for going through this whole post! I truly appreciate people putting their time into OSS, and think that everyone can be a meaningful part of the community. I hope you'll be able to take a few things from this post, and that you feel better equipped to start getting involved in OSS.
