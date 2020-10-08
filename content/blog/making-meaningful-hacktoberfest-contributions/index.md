@@ -18,11 +18,9 @@ In case you're unfamiliar with Hacktoberfest, [Hacktoberfest](https://hacktoberf
 
 ## My contributions to OSS
 
-I actually first started contributing to OSS through Hacktoberfest 2017, as I like free stuff and coding. My first contributions were simple documentation improvements, typo fixes, and such. I liked interacting with nice developers from all over the world, and found OSS to be a nice way to explore cool projects.
+I actually first started contributing to OSS through Hacktoberfest 2017, as I like free stuff and coding. My first contributions were small documentation improvements, bug fixes, and such. I liked interacting with nice developers from all over the world, and found OSS to be a nice way to explore cool projects.
 
-After my first Hacktoberfest, I wanted to make more significant contributions to OSS projects, and so I looked for mature projects where I could step up, commit to working on more complex tasks, and work with the maintainers to get my work merged.
-
-Nowadays, when I'm looking to contribute to OSS, I try to look for projects which I either use myself, or that I'm familiar with (as a user). I also look for projects that are actively maintained. This way, I know that the time invested in my contribution will not to go waste, and that it will actually make a difference.
+After my first Hacktoberfest, I wanted to make more substantial contributions to OSS projects, and so I looked for mature projects where I could step up, commit to working on more complex tasks, and work with the maintainers to get my work merged.
 
 
 ## What Hacktoberfest means for me
@@ -32,7 +30,7 @@ To me, Hacktoberfest isn't just about quick typo fixes or adding superlatives to
 
 ## How you can make a positive impact on OSS
 
-If you're new to open-source, I'd recommend going over a first-timers guide such as [this one](http://opensource.guide/how-to-contribute/).
+If you're new to open-source, I'd recommend going over a first-timers guide such as [this one by GitHub](http://opensource.guide/how-to-contribute/).
 
 Done with that, maybe watched a few videos on the topic, and know what you want to do? I'd pay special attention to the following points:
 
@@ -42,15 +40,15 @@ OSS is already out there, waiting for you to become involved in it. The issues a
 
 ### Make an effort
 
-While the simplest way to contribute to OSS is to work on the issues anyone can observe just by taking a look around the project's source code and documentation, you should aim to do more.
+While the simplest way to contribute to OSS is to work on the issues anyone can observe just by taking a look around the project's repo, you should aim to do more.
 
-Contributions of this type are nice, and you should make them if you're short on time. However, if you can afford to invest a bit more time into OSS - look for the harder problems that people usually shy away from. These usually come in the form of issues that have been around for months and even years, core usability issues, missing infrastructure, and more. Working on them will leave a huge impact on the project, make you a meaningful part of it, and give you a sense of achievement and accomplishment.
+If you can afford to invest a bit more time into OSS -- look for the harder problems that people usually shy away from. These usually come in the form of issues that have been around for months and even years, core usability issues, missing documentation, and more. Working on them will leave a huge impact on the project, make you a meaningful part of it, and give you a sense of achievement and accomplishment.
 
 ### Be as communicative as possible
 
-If you have an idea for a cool feature - that's great! Just open an issue on it and discuss the details with the maintainers first. Want to work on an existing issue? Also cool, but leave a comment on it first, saying you'd like to work on it. I've seen multiple people (including myself) working on the same issue countless times, and it's just a shame caused by a simple lack of communication.
+If you have an idea for a cool feature -- that's great! Just be sure to first open an issue for it, and discuss the details with the maintainers. Want to work on an existing issue? Also cool, but leave a comment on it first, saying you'd like to work on it. Many times I've encountered multiple people working on the same issue, and it's just a shame, caused by a simple lack of communication.
 
-Note that I'm not saying you have to get prior permission for everything. For example, if you encounter some logic which could be optimized while browsing a library's source code, that's awesome! You should totally open a PR with your suggested improvements. However, you shouldn't do a major refactor without discussing it first with the project's maintainers.
+Note that I'm not saying you have to get prior permission for everything. For example, if you notice some logic in a library's source code could be optimized, that's awesome! You should totally open a PR with your suggested improvements. However, you shouldn't do a major refactor without discussing it first with the project's maintainers.
 
 ### Be patient
 
@@ -59,4 +57,4 @@ Contributing OSS is a marathon, not a sprint. Some PRs take many months and even
 
 ## Conclusion
 
-Props to you for going through this whole post! I truly appreciate people putting their time into OSS, and think that everyone can be a meaningful part of the community. I hope you'll be able to take a few things from this post, and that you feel better equipped to start getting involved in OSS.
+I truly appreciate people putting their time into OSS, and think that everyone can be a meaningful part of the community. I hope you'll be able to take a thing or two from this post, and wish you luck in your OSS endeavors.
