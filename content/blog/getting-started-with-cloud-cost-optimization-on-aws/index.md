@@ -6,7 +6,7 @@ description: This post will go over the basics of cost optimization in the cloud
 
 ## Prologue
 
-I'm a long-time user of AWS, and have been a cloud computing advocate for quite some time. However, it seems to me like cost optimization is a part of cloud computing which doesn't get the attention it deserves. As I'm going to speak at [AWS Community Day Tel Aviv](https://awscommunitydaytelaviv2019.splashthat.com) about it, I also wanted to write a blogpost on the subject.
+I'm a long-time user of AWS, and have been a cloud computing advocate for quite some time. However, it seems to me like cost optimization is a part of cloud computing which doesn't get the attention it deserves. As I'm going to speak at [AWS Community Day Tel Aviv](https://awscommunitydaytelaviv2019.splashthat.com) about it, I also wanted to write a post on the subject.
 
 This article will be an introduction to cost optimization (focused on AWS, as that's the cloud provider I'm most familiar with), with the end goal being to give you some inspiration on how you can look differently at your own cloud bills and cut down on costs.
 
@@ -56,7 +56,7 @@ This means different things to different companies and organizations, but in gen
 
 One useful monitoring tool is [AWS Budgets](https://aws.amazon.com/aws-cost-management/aws-budgets), which is built into the AWS Billing Dashboard and allows you to easily set your budget and be alerted when the current bill is exceeding your budget, or when it's predicted to do so.
 
-Note that I'm mainly focused on compute costs in this blogpost since those are usually the most significant expenses users face.
+Note that I'm mainly focused on compute costs in this post since those are usually the most significant expenses users face.
 
 ---
 

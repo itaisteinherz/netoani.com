@@ -8,7 +8,7 @@ description: This post will go over how I look at open-source as well as Hacktob
 
 Following [core issues with Hacktoberfest that maintainers surfaced during the beginning of this year's Hacktoberfest](https://blog.domenic.me/hacktoberfest/), DigitalOcean [made Hacktoberfest 2020 opt-in](https://hacktoberfest.digitalocean.com/hacktoberfest-update). However, I think that this only improves one aspect of the real problem.
 
-While maintainers are no longer forced to deal with all swag-seeking random contributors, many people simply don't know how to contribute to OSS in a way that's meaningful and helpful. Because of this, I wanted to write a blogpost on my own OSS contributions, and how you can make a positive impact on OSS, instead of a negative one.
+While maintainers are no longer forced to deal with all swag-seeking random contributors, many people simply don't know how to contribute to OSS in a way that's meaningful and helpful. Because of this, I wanted to write a post on my own OSS contributions, and how you can make a positive impact on OSS, instead of a negative one.
 
 
 ## What is Hacktoberfest
