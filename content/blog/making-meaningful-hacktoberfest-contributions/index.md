@@ -1,6 +1,6 @@
 ---
 title: Making Meaningful Hacktoberfest Contributions
-date: 2020-10-09T13:33:37.931Z
+date: 2020-10-09T16:35:18.128Z
 description: This post will go over how I look at open-source as well as Hacktoberfest, and how you can leave a meaningful impact on OSS projects.
 ---
 
@@ -58,3 +58,5 @@ Contributing OSS is a marathon, not a sprint. Some PRs take many months and even
 ## Conclusion
 
 I truly appreciate people putting their time into OSS, and think that everyone can be a meaningful part of the community. I hope you'll be able to take a thing or two from this post, and wish you luck in your OSS endeavors.
+
+***Thanks to [Ben Greenberg](https://twitter.com/RabbiGreenberg) for reading drafts of this post and giving me valuable feedback.***
