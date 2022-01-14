@@ -1,87 +1,105 @@
-import React, {Component} from "react";
+import React from "react";
 import {Link, graphql} from "gatsby";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import PageHeading from "../components/page-heading";
 import {rhythm} from "../utils/typography";
 
-class BlogPostTemplate extends Component {
-	render() {
-		const post = this.props.data.markdownRemark;
-		const {title, date, description} = post.frontmatter;
-		const siteTitle = this.props.data.site.siteMetadata.title;
-		const {previous, next} = this.props.pageContext;
+const BlogPostTemplate = ({data, location}) => {
+	const post = data.markdownRemark;
+	const siteTitle = data.site.siteMetadata?.title;
 
-		return (
-			<Layout location={this.props.location} title={siteTitle}>
-				<SEO
-					title={title}
-					description={description || post.excerpt}
-				/>
+	const {title, date, description} = post.frontmatter;
+
+	const {previous, next} = data;
+
+	return (
+		<Layout location={location} title={siteTitle}>
+			<Seo
+				title={title}
+				description={description || post.excerpt}
+			/>
+			<article
+				itemScope
+				itemType="http://schema.org/Article"
+			>
 				<PageHeading
 					title={title}
 					date={date}
 				/>
-				<div dangerouslySetInnerHTML={{__html: post.html}}/> {/* eslint-disable-line react/no-danger */}
+				<section
+					dangerouslySetInnerHTML={{ __html: post.html }} // eslint-disable-line react/no-danger
+					itemProp="articleBody"
+				/>
 				<hr
 					style={{
 						marginBottom: rhythm(1)
 					}}
 				/>
-				<Bio/>
-				{ previous || next ?
-					<ul
+				<footer>
+					<Bio/>
+				</footer>
+				<nav>
+
+				</nav>
+			</article>
+			<nav>
+				<ul
+					style={{
+						display: "flex",
+						flexWrap: "wrap",
+						justifyContent: "space-between",
+						listStyle: "none",
+						margin: `0 0 ${rhythm(1)}`,
+						padding: 0
+					}}
+				>
+					<li
 						style={{
-							display: "flex",
-							flexWrap: "wrap",
-							justifyContent: "space-between",
-							listStyle: "none",
-							margin: `0 0 ${rhythm(1)}`,
-							padding: 0
+							marginRight: rhythm(1.5)
 						}}
 					>
-						<li
-							style={{
-								marginRight: rhythm(1.5)
-							}}
-						>
-							{previous ? (
-								<Link to={`/blog${previous.fields.slug}`} rel="prev">
-									← {previous.frontmatter.title}
-								</Link>
-							) : null}
-						</li>
-						<li
-							style={{
-								marginLeft: "auto"
-							}}
-						>
-							{next ? (
-								<Link to={`/blog${next.fields.slug}`} rel="next">
-									{next.frontmatter.title} →
-								</Link>
-							) : null}
-						</li>
-					</ul> :
-					null}
-			</Layout>
-		);
-	}
+						{previous ? (
+							<Link to={`/blog${previous.fields.slug}`} rel="prev">
+								← {previous.frontmatter.title}
+							</Link>
+						) : null}
+					</li>
+					<li
+						style={{
+							marginLeft: "auto"
+						}}
+					>
+						{next ? (
+							<Link to={`/blog${next.fields.slug}`} rel="next">
+								{next.frontmatter.title} →
+							</Link>
+						) : null}
+					</li>
+				</ul>
+			</nav>
+		</Layout>
+	);
 }
 
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-	query BlogPostBySlug($slug: String!) {
+	query BlogPostBySlug(
+		$id: String!
+		$previousPostId: String
+		$nextPostId: String
+	) {
 		site {
 			siteMetadata {
 				title
 				author
 			}
 		}
-		markdownRemark(fields: { slug: { eq: $slug } }) {
+
+		markdownRemark(id: { eq: $id }) {
 			id
 			excerpt(pruneLength: 160)
 			html
@@ -89,6 +107,24 @@ export const pageQuery = graphql`
 				title
 				date(formatString: "MMMM DD, YYYY")
 				description
+			}
+		}
+
+		previous: markdownRemark(id: { eq: $previousPostId }) {
+			fields {
+				slug
+			}
+			frontmatter {
+				title
+			}
+		}
+
+		next: markdownRemark(id: { eq: $nextPostId }) {
+			fields {
+				slug
+			}
+			frontmatter {
+				title
 			}
 		}
 	}

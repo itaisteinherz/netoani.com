@@ -3,7 +3,7 @@ import {Link} from "gatsby";
 
 import {rhythm} from "../utils/typography";
 
-function NavItem({title, path}) {
+const NavItem = ({title, path}) => {
 	return (
 		<div
 			style={{
@@ -17,9 +17,9 @@ function NavItem({title, path}) {
 			</Link>
 		</div>
 	);
-}
+};
 
-function SiteNav() {
+const SiteNav = () => {
 	return (
 		<div
 			style={{
@@ -31,6 +31,6 @@ function SiteNav() {
 			<NavItem title="About" path="/about"/>
 		</div>
 	);
-}
+};
 
 export default SiteNav;
