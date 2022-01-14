@@ -14,12 +14,18 @@ const Homepage = ({data, location}) => {
 	if (posts.length === 0) {
 		return (
 			<Layout location={location} title={siteTitle}>
-				<Seo title="All posts" />
-				<Bio />
+				<Seo title="All posts"/>
+				<Bio/>
 				<p>
-					No blog posts found. Add markdown posts to "content/blog" (or the
-					directory you specified for the "gatsby-source-filesystem" plugin in
-					gatsby-config.js).
+					No blog posts found. Add markdown posts to&nbsp;
+					<pre
+						style={{
+							display: "inline-block"
+						}}
+					>
+						content/blog
+					</pre>
+					.
 				</p>
 			</Layout>
 		);
@@ -70,7 +76,7 @@ const Homepage = ({data, location}) => {
 											to={`/blog${post.fields.slug}`}
 											itemProp="url"
 										>
-											 <span itemProp="headline">{title}</span>
+											<span itemProp="headline">{title}</span>
 										</Link>
 									</h2>
 									<div
@@ -83,14 +89,13 @@ const Homepage = ({data, location}) => {
 								</header>
 								<section>
 									<p
-										dangerouslySetInnerHTML={{
-											__html: post.frontmatter.description || post.excerpt // eslint-disable-line react/no-danger
+										dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
+											__html: post.frontmatter.description || post.excerpt
 										}}
 										itemProp="description"
 									/>
 								</section>
 							</article>
-							
 						</li>
 					);
 				})}

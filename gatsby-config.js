@@ -57,7 +57,7 @@ module.exports = {
 			}
 		},
 		{
-			resolve: `gatsby-plugin-feed`,
+			resolve: "gatsby-plugin-feed",
 			options: {
 				query: `
 					{
@@ -73,9 +73,10 @@ module.exports = {
 				`,
 				feeds: [
 					{
-						serialize: ({ query: { site, allMarkdownRemark } }) => {
+						serialize: ({query: {site, allMarkdownRemark}}) => {
 							return allMarkdownRemark.nodes.map(node => {
-								return Object.assign({}, node.frontmatter, {
+								return {
+									...node.frontmatter,
 									description: node.excerpt,
 									date: node.frontmatter.date,
 									url: site.siteMetadata.siteUrl + node.fields.slug,
@@ -83,7 +84,7 @@ module.exports = {
 									custom_elements: [{
 										"content:encoded": node.html
 									}]
-								});
+								};
 							});
 						},
 						query: `
@@ -106,10 +107,10 @@ module.exports = {
 							}
 						`,
 						output: "/rss.xml",
-						title: "netoani.com",
-					},
-				],
-			},
+						title: "netoani.com"
+					}
+				]
+			}
 		},
 		{
 			resolve: "gatsby-plugin-manifest",

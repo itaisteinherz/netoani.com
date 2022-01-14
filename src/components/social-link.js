@@ -1,7 +1,7 @@
 import React from "react";
 import {useStaticQuery, graphql} from "gatsby";
 
-function SocialLink({service, urlPath = "", children}) {
+const SocialLink = ({service, urlPath = "", children}) => {
 	const data = useStaticQuery(graphql`
 		query SocialLinkQuery {
 			site {
@@ -24,6 +24,6 @@ function SocialLink({service, urlPath = "", children}) {
 			{children}
 		</a>
 	);
-}
+};
 
 export default SocialLink;

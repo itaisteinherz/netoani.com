@@ -1,7 +1,7 @@
 import React from "react";
 import {StaticImage} from "gatsby-plugin-image";
 
-function AuthorImage() {
+const AuthorImage = () => {
 	return (
 		<StaticImage
 			layout="fixed"
@@ -16,6 +16,6 @@ function AuthorImage() {
 			}}
 		/>
 	);
-}
+};
 
 export default AuthorImage;

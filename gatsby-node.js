@@ -1,12 +1,12 @@
 const path = require("path");
-const {createFilePath} = require("gatsby-source-filesystem")
+const {createFilePath} = require("gatsby-source-filesystem");
 
 exports.createPages = async ({graphql, actions}) => {
 	const {createPage} = actions;
-	
+
 	// Define a template for blog post
 	const blogPost = path.resolve("./src/templates/blog-post.js");
-	
+
 	// Get all markdown blog posts sorted by date
 	const result = await graphql(
 		`
@@ -27,8 +27,8 @@ exports.createPages = async ({graphql, actions}) => {
 	);
 
 	if (result.errors) {
-		reporter.panicOnBuild(
-			'Failed to load blogposts',
+		reporter.panicOnBuild( // eslint-disable-line no-undef
+			"Failed to load blogposts",
 			result.errors
 		);
 
@@ -57,7 +57,7 @@ exports.createPages = async ({graphql, actions}) => {
 					nextPostId
 				}
 			});
-		});	
+		});
 	}
 };
 
@@ -66,7 +66,7 @@ exports.onCreateNode = ({node, actions, getNode}) => {
 
 	if (node.internal.type === "MarkdownRemark") {
 		const value = createFilePath({node, getNode});
-		
+
 		createNodeField({
 			name: "slug",
 			node,
@@ -119,5 +119,5 @@ exports.createSchemaCustomization = ({actions}) => {
 		type Fields {
 			slug: String
 		}
-	`)
-}
+	`);
+};

@@ -30,7 +30,7 @@ const BlogPostTemplate = ({data, location}) => {
 					date={date}
 				/>
 				<section
-					dangerouslySetInnerHTML={{ __html: post.html }} // eslint-disable-line react/no-danger
+					dangerouslySetInnerHTML={{__html: post.html}} // eslint-disable-line react/no-danger
 					itemProp="articleBody"
 				/>
 				<hr
@@ -41,9 +41,6 @@ const BlogPostTemplate = ({data, location}) => {
 				<footer>
 					<Bio/>
 				</footer>
-				<nav>
-
-				</nav>
 			</article>
 			<nav>
 				<ul
@@ -82,7 +79,7 @@ const BlogPostTemplate = ({data, location}) => {
 			</nav>
 		</Layout>
 	);
-}
+};
 
 export default BlogPostTemplate;
 
