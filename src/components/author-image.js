@@ -1,51 +1,21 @@
 import React from "react";
-import {StaticQuery, graphql} from "gatsby";
-import Image from "gatsby-image";
+import {StaticImage} from "gatsby-plugin-image";
 
-function AuthorImage() {
+const AuthorImage = () => {
 	return (
-		<StaticQuery
-			query={authorImageQuery}
-			render={data => {
-				const {author} = data.site.siteMetadata;
-
-				return (
-					<Image
-						fixed={data.avatar.childImageSharp.fixed}
-						alt={author}
-						style={{
-							display: "block",
-							margin: 0,
-							maxHeight: 100,
-							minWidth: 100,
-							maxWidth: 100,
-							borderRadius: "100%"
-						}}
-						imgStyle={{
-							borderRadius: "50%"
-						}}
-					/>
-				);
+		<StaticImage
+			layout="fixed"
+			formats={["auto", "webp", "avif"]}
+			src="../../content/assets/profile-pic.jpg"
+			width={100}
+			height={100}
+			quality={95}
+			alt="Profile picture"
+			style={{
+				borderRadius: "50%"
 			}}
 		/>
 	);
-}
-
-const authorImageQuery = graphql`
-	query AuthorImageQuery {
-		avatar: file(absolutePath: { regex: "/profile-pic.jpg/" }) {
-			childImageSharp {
-				fixed(width: 400, height: 400) {
-					...GatsbyImageSharpFixed
-				}
-			}
-		}
-		site {
-			siteMetadata {
-				author
-			}
-		}
-	}
-`;
+};
 
 export default AuthorImage;

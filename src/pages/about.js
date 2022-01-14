@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {graphql} from "gatsby";
 
 import Layout from "../components/layout";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 import PageHeading from "../components/page-heading";
 import AboutPageContent from "../../content/about-page/index.mdx";
 
@@ -18,7 +18,7 @@ class AboutPage extends Component {
 
 		return (
 			<Layout location={this.props.location} title={title}>
-				<SEO
+				<Seo
 					title={PAGE_TITLE}
 					description="About page explaining who Itai Steinherz is."
 				/>

@@ -2,9 +2,9 @@ import React from "react";
 import StyledDate from "../components/styled-date";
 import {rhythm, scale} from "../utils/typography";
 
-function PageHeading({title, date = null, datePrefix = ""}) {
+const PageHeading = ({title, date = null, datePrefix = ""}) => {
 	return (
-		<div>
+		<header>
 			{date ?
 				<StyledDate date={date} datePrefix={datePrefix}/> :
 				null}
@@ -17,8 +17,8 @@ function PageHeading({title, date = null, datePrefix = ""}) {
 			>
 				{title}
 			</h1>
-		</div>
+		</header>
 	);
-}
+};
 
 export default PageHeading;

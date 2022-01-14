@@ -2,7 +2,7 @@ import React from "react";
 import gray from "gray-percentage";
 import {rhythm, scale} from "../utils/typography";
 
-function StyledDate({date, datePrefix = ""}) {
+const StyledDate = ({date, datePrefix = ""}) => {
 	return (
 		<h3
 			style={{
@@ -18,6 +18,6 @@ function StyledDate({date, datePrefix = ""}) {
 			{datePrefix}{date}
 		</h3>
 	);
-}
+};
 
 export default StyledDate;
