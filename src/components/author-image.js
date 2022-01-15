@@ -7,12 +7,19 @@ const AuthorImage = () => {
 			layout="fixed"
 			formats={["auto", "webp", "avif"]}
 			src="../../content/assets/profile-pic.jpg"
-			width={100}
-			height={100}
-			quality={95}
+			width={400}
+			height={400}
+			quality={100}
 			alt="Profile picture"
+			imgStyle={{
+				borderRadius: "100%",
+				width: "100px",
+				height: "100px"
+			}}
 			style={{
-				borderRadius: "50%"
+				borderRadius: "100%",
+				width: "100px",
+				height: "100px"
 			}}
 		/>
 	);
