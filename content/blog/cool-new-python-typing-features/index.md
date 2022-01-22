@@ -10,13 +10,65 @@ Python is great at being a dynamically and strongly-typed programming language. 
 
 More than 8 years have passed since then, and type hinting in Python has improved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the newly added features, with the hopes that you will find them useful and integrate them into your codebase.
 
-## `Protocol` and `@runtime_checkable`
+## Parameter specification variables
 
-For more info, see [PEP 544](https://www.python.org/dev/peps/pep-0544/).
+Let's imagine you'd like to write a simple decorator, which measures and logs the execution time of other methods:
 
-## Generics
+```python
+import datetime
+from typing import Callable, Any
 
-For more info, see [PEP 585](https://www.python.org/dev/peps/pep-0585/).
+
+def time_execution(func: Callable[..., Any]) -> Callable[..., Any]:
+	def inner(*args, **kwargs):
+		execution_start = datetime.datetime.now()
+		result = func(*args, **kwargs)
+		execution_time = datetime.datetime.now() - execution_start
+		print(f'> Execution took {execution_time}')
+
+
+def some_method():
+	pass
+```
+
+TODO: Place some actual long calculation in the method (preferably from a builtin method), add more info...
+
+
+For more info, see [PEP 612](https://www.python.org/dev/peps/pep-0612/).
+
+## User-defined type guards
+
+Moving on to to the next example - let's assume you're writing a utility method, validating that an object is of a desired type (used for [type narrrowing](https://mypy.readthedocs.io/en/latest/type_narrowing.html)):
+
+```python
+from typing import Union
+
+RealNumber = Union[int, float]
+
+
+def is_real_number(value: object) -> bool:
+    return isinstance(value, int) or isinstance(value, float)
+
+
+def print_value_type(value: object):
+    if is_real_number(value):
+        assert value == value.real  # Error: invalid type
+        print(f'Given value is a real number!')
+    else:
+        print('Given value is of unknown type')
+```
+
+The above code is valid, however static type checkers will report an error because a type checker doesn't have enough information to verify that the type of `value` is `RealNumber`. We can change the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`, which will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber`. Now, type checkers won't report any errors:
+
+```python
+from typing import TypeGuard
+
+
+def is_real_number(value: object) -> TypeGuard[RealNumber]:
+    return isinstance(value, int) or isinstance(value, float)
+```
+
+For more info, see [PEP 647](https://www.python.org/dev/peps/pep-0647/).
 
 ## Literal types
 
@@ -29,11 +81,3 @@ For more info, see [PEP 591](https://www.python.org/dev/peps/pep-0591/).
 ## Runtime type annotations
 
 For more info, see [PEP 593](https://www.python.org/dev/peps/pep-0593/).
-
-## Parameter specification variables
-
-For more info, see [PEP 612](https://www.python.org/dev/peps/pep-0612/).
-
-## User-defined type guards
-
-For more info, see [PEP 647](https://www.python.org/dev/peps/pep-0647/).
