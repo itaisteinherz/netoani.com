@@ -114,3 +114,11 @@ For more info, see [PEP 591](https://www.python.org/dev/peps/pep-0591/).
 ## Runtime type annotations
 
 For more info, see [PEP 593](https://www.python.org/dev/peps/pep-0593/).
+
+## Worthy mentions
+
+Here are some features I decided not to cover in this article, to keep it short and light:
+
+- `Protcol` - you can read more about protocols [here](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/) and in [PEP 544](https://www.python.org/dev/peps/pep-0544/).
+- `Generic` - you can read more about generics [here](https://mypy.readthedocs.io/en/latest/generics.html) and in [PEP 585](https://www.python.org/dev/peps/pep-0585/).
+- `TypedDict`- you can read more about typed dictionaries [here](https://adamj.eu/tech/2021/05/10/python-type-hints-how-to-use-typeddict/) and in [PEP 589](https://www.python.org/dev/peps/pep-0589/).
