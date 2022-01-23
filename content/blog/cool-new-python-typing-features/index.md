@@ -12,29 +12,62 @@ More than 8 years have passed since then, and type hinting in Python has improve
 
 ## Parameter specification variables
 
-Let's imagine you'd like to write a simple decorator, which measures and logs the execution time of other methods:
+Let's imagine you'd like to write a simple decorator, which print a message every time a method is called:
 
 ```python
-import datetime
-from typing import Callable, Any
+from typing import Callable, TypeVar
+
+R = TypeVar('R')
 
 
-def time_execution(func: Callable[..., Any]) -> Callable[..., Any]:
-	def inner(*args, **kwargs):
-		execution_start = datetime.datetime.now()
-		result = func(*args, **kwargs)
-		execution_time = datetime.datetime.now() - execution_start
-		print(f'> Execution took {execution_time}')
+def log(func: Callable[..., R]) -> Callable[..., R]:
+	def wrapper(*args, **kwargs):
+		print('Method has been called!')
+		return func(*args, **kwargs)
+
+	return wrapper
 
 
-def some_method():
-	pass
+@log
+def add(a: int, b: int) -> int:
+	return a + b
 ```
 
-TODO: Place some actual long calculation in the method (preferably from a builtin method), add more info...
+The following call to `add` is invalid, and one would expect type checkers to report it as an error, however it will only fail at runtime:
+
+```python
+add(1, 'a')  # Fails at runtime
+```
+
+This is because the the decorated `add` has the typing `Callable[..., int]` (with `...` meaning arguments aren't valdiated). [PEP 612](https://www.python.org/dev/peps/pep-0612/) addresses this issue, by introducing `ParamSpec`. `ParamSpec` variables are a new type of type variables, used for defining the dependencies between different callables (such as decorators and the decorated method).
+
+Using `ParamSpec`, we can modify the example above to enforce the parameters types of the decorated method, while maintaining the decorator's flexibility:
+
+```python
+from typing import Callable, ParamSpec, TypeVar
+
+P = ParamSpec('P')
+R = TypeVar('R')
 
 
-For more info, see [PEP 612](https://www.python.org/dev/peps/pep-0612/).
+def log(func: Callable[P, R]) -> Callable[P, R]:
+	def wrapper(*args: P.args, **kwargs: P.kwargs):
+		print('Method has been called!')
+		return func(*args, **kwargs)
+
+	return wrapper
+
+
+@log
+def add(a: int, b: int) -> int:
+	return a + b
+```
+
+The following will now be reported as an error by the type checker:
+
+```python
+add(1, 'a')  # Rejected by the type checker
+```
 
 ## User-defined type guards
 
@@ -47,15 +80,15 @@ RealNumber = Union[int, float]
 
 
 def is_real_number(value: object) -> bool:
-    return isinstance(value, int) or isinstance(value, float)
+	return isinstance(value, int) or isinstance(value, float)
 
 
 def print_value_type(value: object):
-    if is_real_number(value):
-        assert value == value.real  # Error: invalid type
-        print(f'Given value is a real number!')
-    else:
-        print('Given value is of unknown type')
+	if is_real_number(value):
+		assert value == value.real  # Error: invalid type
+		print(f'Given value is a real number!')
+	else:
+		print('Given value is of unknown type')
 ```
 
 The above code is valid, however static type checkers will report an error because a type checker doesn't have enough information to verify that the type of `value` is `RealNumber`. We can change the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`, which will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber`. Now, type checkers won't report any errors:
@@ -65,7 +98,7 @@ from typing import TypeGuard
 
 
 def is_real_number(value: object) -> TypeGuard[RealNumber]:
-    return isinstance(value, int) or isinstance(value, float)
+	return isinstance(value, int) or isinstance(value, float)
 ```
 
 For more info, see [PEP 647](https://www.python.org/dev/peps/pep-0647/).
