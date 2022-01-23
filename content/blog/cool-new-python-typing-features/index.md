@@ -1,14 +1,14 @@
 ---
 title: Cool new Python typing features
 date: 2022-01-18T22:13:46.273Z
-description: ...
+description: Interesting typing features released in Python 3.8 and later, which you can use today to find more bugs during development and ship better code.
 ---
 
 ## Introduction
 
 Python is great at being a dynamically and strongly-typed programming language. However, once you get enough mileage working with large Python codebases, you'll probably realize that dyanmic types can be confusing, cause bugs, and result in unexpected behavior. The folks maintaining Python realized this as well, and decided to implement a built-in way to add static type annotations in Python (see [PEP 484](https://www.python.org/dev/peps/pep-0484/)).
 
-More than 8 years have passed since then, and type hinting in Python has improved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the newly added features, with the hopes that you will find them useful and integrate them into your codebase.
+7 years have passed since then, and type hinting in Python has improved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the newly added features, with the hopes that you will find them useful and integrate them into your codebase.
 
 ## Parameter specification variables
 
@@ -39,7 +39,7 @@ The following call to `add` is invalid, and one would expect type checkers to re
 add(1, 'a')  # Fails at runtime
 ```
 
-This is because the the decorated `add` has the typing `Callable[..., int]` (with `...` meaning arguments aren't valdiated). [PEP 612](https://www.python.org/dev/peps/pep-0612/) addresses this issue, by introducing `ParamSpec`. `ParamSpec` variables are a new type of type variables, used for defining the dependencies between different callables (such as decorators and the decorated method).
+This is because the the decorated `add` has the typing `Callable[..., int]` (with `...` meaning arguments aren't validated). [PEP 612](https://www.python.org/dev/peps/pep-0612/) addresses this issue by introducing `ParamSpec`. `ParamSpec` variables are a new type of type variables, used for defining the dependencies between different callables (such as decorators and the decorated method).
 
 Using `ParamSpec`, we can modify the example above to enforce the parameters types of the decorated method, while maintaining the decorator's flexibility:
 
