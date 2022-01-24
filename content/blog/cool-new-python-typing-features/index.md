@@ -4,6 +4,9 @@ date: 2022-01-18T22:13:46.273Z
 description: Interesting typing features released in Python 3.8 and later, which you can use today to find more bugs during development and ship better code.
 ---
 
+TODO: Add Python version in which each feature was added.
+TODO: Add note about `Any` vs. `object` - https://stackoverflow.com/a/39817126
+
 ## Introduction
 
 Python is great at being a dynamically and strongly-typed programming language. However, once you get enough mileage working with large Python codebases, you'll probably realize that dyanmic types can be confusing, cause bugs, and result in unexpected behavior. The folks maintaining Python realized this as well, and decided to implement a built-in way to add static type annotations in Python (see [PEP 484](https://www.python.org/dev/peps/pep-0484/)).
@@ -103,9 +106,34 @@ def is_real_number(value: object) -> TypeGuard[RealNumber]:
 
 For more info, see [PEP 647](https://www.python.org/dev/peps/pep-0647/).
 
-## Literal types
+## Type hints for dictionaries with a fixed set of keys
 
-For more info, see [PEP 586](https://www.python.org/dev/peps/pep-0586/).
+Let's assume we'd like to describe a person using a dictionary:
+
+```python
+person = {'name': 'Itai',
+		  'age': 19}
+```
+
+The dictionary's keys should be strings, but we don't want to constrain the types its values. The type hint `Dict[str, Any]` (or `dict[str, Any`] in Python 3.9 and later - see [`GenericAlias`](https://docs.python.org/3/library/stdtypes.html#types-genericalias)). This is better than nothing, but doesn't really enforce our requirements for what the person dictionary should look like.
+
+Using `TypedDict`, introduced in [PEP 589](https://www.python.org/dev/peps/pep-0589/), we can now enforce the specific key name and value types in the dictionary:
+
+```python
+from typing import TypedDict
+
+
+class Person(TypedDict):
+	name: str
+	age: int
+```
+
+Now, a type checker will recognize and enforce the typing of the values (and keys) of `Person` dictionaries:
+
+```python
+person: Person = {'name': 'Itai',
+				  'age': 19}
+```
 
 ## Final typing qualifier
 
@@ -121,4 +149,6 @@ Here are some features I decided not to cover in this article, to keep it short 
 
 - `Protcol` - you can read more about protocols [here](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/) and in [PEP 544](https://www.python.org/dev/peps/pep-0544/).
 - `Generic` - you can read more about generics [here](https://mypy.readthedocs.io/en/latest/generics.html) and in [PEP 585](https://www.python.org/dev/peps/pep-0585/).
-- `TypedDict`- you can read more about typed dictionaries [here](https://adamj.eu/tech/2021/05/10/python-type-hints-how-to-use-typeddict/) and in [PEP 589](https://www.python.org/dev/peps/pep-0589/).
+- `Literal` - you can read more about literals [here](https://mypy.readthedocs.io/en/stable/literal_types.html) and in [PEP 586](https://www.python.org/dev/peps/pep-0586/).
+
+<!-- - `TypedDict`- you can read more about typed dictionaries [here](https://adamj.eu/tech/2021/05/10/python-type-hints-how-to-use-typeddict/) and in [PEP 589](https://www.python.org/dev/peps/pep-0589/). -->
