@@ -6,6 +6,7 @@ description: Interesting typing features released in Python 3.8 and later, which
 
 TODO: Add Python version in which each feature was added.
 TODO: Add note about `Any` vs. `object` - https://stackoverflow.com/a/39817126
+TODO: Mention @overload?
 
 ## Introduction
 
@@ -72,6 +73,8 @@ The following will now be reported as an error by the type checker:
 add(1, 'a')  # Rejected by the type checker
 ```
 
+_This feature was shipped in Python 3.10._
+
 ## User-defined type guards
 
 Moving on to to the next example - let's assume you're writing a utility method, validating that an object is of a desired type (used for [type narrrowing](https://mypy.readthedocs.io/en/latest/type_narrowing.html)):
@@ -106,6 +109,8 @@ def is_real_number(value: object) -> TypeGuard[RealNumber]:
 
 For more info, see [PEP 647](https://www.python.org/dev/peps/pep-0647/).
 
+_This feature was shipped in Python 3.10._
+
 ## Type hints for dictionaries with a fixed set of keys
 
 Let's assume we'd like to describe a person using a dictionary:
@@ -133,15 +138,11 @@ Now, a type checker will recognize and enforce the typing of the values (and key
 ```python
 person: Person = {'name': 'Itai',
 				  'age': 19}
+# Or even:
+person = Person(name='Itai', age=19)
 ```
 
-## Final typing qualifier
-
-For more info, see [PEP 591](https://www.python.org/dev/peps/pep-0591/).
-
-## Runtime type annotations
-
-For more info, see [PEP 593](https://www.python.org/dev/peps/pep-0593/).
+_This feature was shipped in Python 3.8._
 
 ## Worthy mentions
 
@@ -149,6 +150,8 @@ Here are some features I decided not to cover in this article, to keep it short 
 
 - `Protcol` - you can read more about protocols [here](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/) and in [PEP 544](https://www.python.org/dev/peps/pep-0544/).
 - `Generic` - you can read more about generics [here](https://mypy.readthedocs.io/en/latest/generics.html) and in [PEP 585](https://www.python.org/dev/peps/pep-0585/).
+- `Final` - you can read more about finals [here](https://mypy.readthedocs.io/en/stable/final_attrs.html) and in [PEP 591](https://www.python.org/dev/peps/pep-0591/).
 - `Literal` - you can read more about literals [here](https://mypy.readthedocs.io/en/stable/literal_types.html) and in [PEP 586](https://www.python.org/dev/peps/pep-0586/).
+- `Annotated` - you can read more about function and variable annotations [here]() and in [PEP 593](https://www.python.org/dev/peps/pep-0593/).
 
 <!-- - `TypedDict`- you can read more about typed dictionaries [here](https://adamj.eu/tech/2021/05/10/python-type-hints-how-to-use-typeddict/) and in [PEP 589](https://www.python.org/dev/peps/pep-0589/). -->
