@@ -77,7 +77,7 @@ _This feature was shipped in Python 3.10._
 
 ## User-defined type guards
 
-Moving on to to the next example - let's assume you're writing a utility method, validating that an object is of a desired type (used for [type narrrowing](https://mypy.readthedocs.io/en/latest/type_narrowing.html)):
+Let's assume you're writing a utility method, validating that an object is of a desired type (used for [type narrrowing](https://mypy.readthedocs.io/en/latest/type_narrowing.html)):
 
 ```python
 from typing import Union
@@ -92,22 +92,24 @@ def is_real_number(value: object) -> bool:
 def print_value_type(value: object):
 	if is_real_number(value):
 		assert value == value.real  # Error: invalid type
-		print(f'Given value is a real number!')
-	else:
-		print('Given value is of unknown type')
 ```
 
-The above code is valid, however static type checkers will report an error because a type checker doesn't have enough information to verify that the type of `value` is `RealNumber`. We can change the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`, which will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber`. Now, type checkers won't report any errors:
+The above code is valid, however static type checkers will report an error. This is because a type checker doesn't have enough information to verify that the type of `value` is `RealNumber`. Using `TypeGuard`, introduced in [PEP 647](https://www.python.org/dev/peps/pep-0647/), we can enable type narrowing by changing the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`. This will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber` (and if it returns `False`, it isn't). Now, type checkers won't report any errors:
 
 ```python
-from typing import TypeGuard
+from typing import Union, TypeGuard
+
+RealNumber = Union[int, float]
 
 
 def is_real_number(value: object) -> TypeGuard[RealNumber]:
 	return isinstance(value, int) or isinstance(value, float)
-```
 
-For more info, see [PEP 647](https://www.python.org/dev/peps/pep-0647/).
+
+def print_value_type(value: object):
+	if is_real_number(value):
+		assert value == value.real
+```
 
 _This feature was shipped in Python 3.10._
 
