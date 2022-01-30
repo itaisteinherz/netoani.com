@@ -4,9 +4,13 @@ date: 2022-01-18T22:13:46.273Z
 description: Interesting typing features released in Python 3.8 and later, which you can use today to find more bugs during development and ship better code.
 ---
 
-TODO: Add Python version in which each feature was added.
-TODO: Add note about `Any` vs. `object` - https://stackoverflow.com/a/39817126
-TODO: Mention @overload?
+TODO:
+
+- Add `TypeVar` introduction
+- Add prerequisites to intro
+- Maybe add note about `Any` vs. `object` - https://stackoverflow.com/a/39817126
+- Maybe mention `@overload`?
+- Maybe write about `Protocol`
 
 ## Introduction
 
@@ -47,7 +51,7 @@ This is because the the decorated `add` has the typing `Callable[..., int]` (wit
 
 Using `ParamSpec`, we can modify the example above to enforce the parameters types of the decorated method, while maintaining the decorator's flexibility:
 
-```python{1,3-4,7-8}
+```python{1,3,7-8}
 from typing import Callable, ParamSpec, TypeVar
 
 P = ParamSpec('P')
