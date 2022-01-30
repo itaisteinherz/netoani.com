@@ -6,8 +6,6 @@ description: Advanced typing features which you can use today to find more bugs 
 
 TODO:
 
-- Add `TypeVar` introduction
-- Add prerequisites to intro
 - Maybe add note about `Any` vs. `object` - https://stackoverflow.com/a/39817126
 - Maybe mention `@overload`?
 - Maybe write about `Protocol`
