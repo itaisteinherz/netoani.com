@@ -45,7 +45,7 @@ def add(a: int, b: int) -> int:
 	return a + b
 ```
 
-> In case you aren't familiar with `TypeVar`, a type variable lets you refer to the same type in multiple places without specifying the exact type.
+> In case you aren't familiar with [`TypeVar`](https://docs.python.org/3/library/typing.html#typing.TypeVar), a type variable lets you refer to the same type in multiple places without specifying the exact type.
 >
 > In the code snippet above, a type variable was used in the `log` method type signature to annotate that the decorated method's return type is the same as that of `func`.
 

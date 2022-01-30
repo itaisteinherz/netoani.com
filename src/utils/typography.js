@@ -27,6 +27,14 @@ FairyGates.overrideThemeStyles = () => {
 		},
 		"details > *:last-child": {
 			marginBottom: 0
+		},
+		// Make code links look like links
+		"a > code[class*=language-]": {
+			color: "inherit",
+			textDecoration: "underline"
+		},
+		"a > code[class*=language-]:hover": {
+			textDecoration: "none"
 		}
 	};
 };
