@@ -1,7 +1,7 @@
 ---
-title: Cool new Python typing features
+title: Advanced Python type hinting
 date: 2022-01-18T22:13:46.273Z
-description: Interesting typing features released in Python 3.8 and later, which you can use today to find more bugs during development and ship better code.
+description: Advanced typing features which you can use today to find more bugs during development and ship better code.
 ---
 
 TODO:
@@ -16,11 +16,17 @@ TODO:
 
 Python is great at being a dynamically and strongly-typed programming language. However, once you get enough mileage working with large Python codebases, you'll probably realize that dyanmic types can be confusing, cause bugs, and result in unexpected behavior. The folks maintaining Python realized this as well, and decided to implement a built-in way to add static type annotations in Python (see [PEP 484](https://www.python.org/dev/peps/pep-0484/)).
 
-7 years have passed since then, and type hinting in Python has improved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the newly added features, with the hopes that you will find them useful and integrate them into your codebase.
+7 years have passed since then, and type hinting in Python has matured and evolved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the more advanced and newly added features, with the hopes that you will find them useful and integrate them into your codebase.
+
+> This blogpost assumes you know the basics of type hinting in Python. If you don't, I recommend going over [this guide from Real Python](https://realpython.com/python-type-checking/).
+
+## Static duck typing with protocols
+
+...
 
 ## Parameter specification variables
 
-Let's imagine you'd like to write a simple decorator, which print a message every time a method is called:
+Let's imagine you'd like to write a simple decorator, which will print a message every time a method is called:
 
 ```python
 from typing import Callable, TypeVar
@@ -40,6 +46,10 @@ def log(func: Callable[..., R]) -> Callable[..., R]:
 def add(a: int, b: int) -> int:
 	return a + b
 ```
+
+> In case you aren't familiar with `TypeVar`, a type variable lets you refer to the same type in multiple places without specifying the exact type.
+>
+> In the code snippet above, a type variable was used in the `log` method type signature to annotate that the decorated method's return type is the same as that of `func`.
 
 The following call to `add` is invalid, and one would expect type checkers to report it as an error, however it will only fail at runtime:
 
@@ -154,7 +164,7 @@ _This feature was shipped in Python 3.8._
 
 Here are some features I decided not to cover in this article, to keep it short and light:
 
-- `Protcol` - you can read more about protocols [here](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/) and in [PEP 544](https://www.python.org/dev/peps/pep-0544/).
+- `Protocol` - you can read more about protocols [here](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/) and in [PEP 544](https://www.python.org/dev/peps/pep-0544/).
 - `Generic` - you can read more about generics [here](https://mypy.readthedocs.io/en/latest/generics.html) and in [PEP 585](https://www.python.org/dev/peps/pep-0585/).
 - `Final` - you can read more about finals [here](https://mypy.readthedocs.io/en/stable/final_attrs.html) and in [PEP 591](https://www.python.org/dev/peps/pep-0591/).
 - `Literal` - you can read more about literals [here](https://mypy.readthedocs.io/en/stable/literal_types.html) and in [PEP 586](https://www.python.org/dev/peps/pep-0586/).
