@@ -10,6 +10,28 @@ TODO:
 - Maybe mention `@overload`?
 - Maybe write about `Protocol`
 
+IMPORTANT:
+
+- Move all existing edge cases bullets to new article.
+- Change this article to be about:
+	- Generics and type variables
+	- Protocols and `@runtime_checkable`
+	- `@overload`
+	- Bonus:
+		- `Any` vs. `object`
+		- 
+
+- Other article will focus on edge cases solved by newer features:
+	- `ParamSpec` and `Concatenate`
+	- `TypeGuard`
+	- `TypedDict`
+	- Bonus:
+		- `GenericAlias` - aka `list[int]`, `type[my_obj]`, etc.
+		- `ClassVar`
+		- PEP 604
+		- `TypeAlias`
+		- `Literal`
+
 ## Introduction
 
 Python is great at being a dynamically and strongly-typed programming language. However, once you get enough mileage working with large Python codebases, you'll probably realize that dyanmic types can be confusing, cause bugs, and result in unexpected behavior. The folks maintaining Python realized this as well, and decided to implement a built-in way to add static type annotations in Python (see [PEP 484](https://www.python.org/dev/peps/pep-0484/)).
@@ -17,6 +39,8 @@ Python is great at being a dynamically and strongly-typed programming language. 
 7 years have passed since then, and type hinting in Python has matured and evolved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the more advanced and newly added features, with the hopes that you will find them useful and integrate them into your codebase.
 
 > This blogpost assumes you know the basics of type hinting in Python. If you don't, I recommend going over [this guide from Real Python](https://realpython.com/python-type-checking/).
+
+## Generics and type variables
 
 ## Static duck typing with protocols
 
