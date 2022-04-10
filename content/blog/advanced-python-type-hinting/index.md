@@ -31,6 +31,7 @@ IMPORTANT:
 		- PEP 604
 		- `TypeAlias`
 		- `Literal`
+		- `Self` - https://www.python.org/dev/peps/pep-0673/
 
 ## Introduction
 
