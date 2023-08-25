@@ -1,5 +1,5 @@
 ---
-title: Advanced Python type hinting
+title: Special Python Type Hints for Edge Cases
 date: 2022-01-18T22:13:46.273Z
 description: Advanced typing features which you can use today to find more bugs during development and ship better code.
 ---
@@ -40,12 +40,6 @@ Python is great at being a dynamically and strongly-typed programming language. 
 7 years have passed since then, and type hinting in Python has matured and evolved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the more advanced and newly added features, with the hopes that you will find them useful and integrate them into your codebase.
 
 > This blogpost assumes you know the basics of type hinting in Python. If you don't, I recommend going over [this guide from Real Python](https://realpython.com/python-type-checking/).
-
-## Generics and type variables
-
-## Static duck typing with protocols
-
-...
 
 ## Parameter specification variables
 
@@ -131,7 +125,7 @@ def print_value_type(value: object):
 		assert value == value.real  # Error: invalid type
 ```
 
-The above code is valid, however static type checkers will report an error. This is because a type checker doesn't have enough information to verify that the type of `value` is `RealNumber`. Using `TypeGuard`, introduced in [PEP 647](https://www.python.org/dev/peps/pep-0647/), we can enable type narrowing by changing the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`. This will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber` (and if it returns `False`, it isn't). Now, type checkers won't report any errors:
+The above code is valid, however static type checkers will report an error. This is because a type checker doesn't have enough information to verify that `value` is a number. Using `TypeGuard`, introduced in [PEP 647](https://www.python.org/dev/peps/pep-0647/), we can enable type narrowing by changing the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`. This will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber` (and if it returns `False`, it isn't). Now, type checkers won't report any errors:
 
 ```python{1,6}
 from typing import Union, TypeGuard
@@ -155,8 +149,10 @@ _This feature was shipped in Python 3.10._
 Let's assume we'd like to describe a person using a dictionary:
 
 ```python
-person = {'name': 'Itai',
-		  'age': 19}
+person = {
+	'name': 'Bob',
+	'age': 32
+}
 ```
 
 The dictionary's keys should be strings, but we don't want to constrain the types its values. The type hint `Dict[str, Any]` (or `dict[str, Any`] in Python 3.9 and later - see [`GenericAlias`](https://docs.python.org/3/library/stdtypes.html#types-genericalias)). This is better than nothing, but doesn't really enforce our requirements for what the person dictionary should look like.
@@ -175,22 +171,73 @@ class Person(TypedDict):
 Now, a type checker will recognize and enforce the typing of the values (and keys) of `Person` dictionaries:
 
 ```python
-person: Person = {'name': 'Itai',
-				  'age': 19}
+person: Person = {
+	'name': 'Bob',
+	'age': 32
+}
 # Or even:
-person = Person(name='Itai', age=19)
+person = Person(name='Bob', age=32)
 ```
 
 _This feature was shipped in Python 3.8._
 
-## Worthy mentions
+## Self type hint
 
-Here are some features I decided not to cover in this article, to keep it short and light:
+Let's assume we're developing a program which keeps track of blockchain transactions. A transaction might be represented using this simple interface:
 
-- `Protocol` - you can read more about protocols [here](https://adamj.eu/tech/2021/05/18/python-type-hints-duck-typing-with-protocol/) and in [PEP 544](https://www.python.org/dev/peps/pep-0544/).
-- `Generic` - you can read more about generics [here](https://mypy.readthedocs.io/en/latest/generics.html) and in [PEP 585](https://www.python.org/dev/peps/pep-0585/).
+```python
+from abc import ABC
+from typing import List
+
+
+class Transaction(ABC):
+	def __init__(self, parents: List["Transaction"]):
+		self.parents = parents
+```
+
+For Bitcoin transactions, for example, we could implement `BitcoinTransaction`:
+
+```python
+class BitcoinTransaction(Transaction):
+    def __init__(self, sender: str, recipient: str, parents: List["Transaction"]):
+        super().__init__(parents)
+        self.sender = sender
+        self.recipient = recipient
+```
+
+Usage of `BitcoinTransaction` would look like so:
+
+```python
+parent = BitcoinTransaction(sender="Alice", recipient="Bob", parents=[])
+transaction = BitcoinTransaction(sender="Bob", recipient="Alice", parents=[parent])
+# Rejected by the type checker:
+print(f"The parent sender is {transaction.parents[0].sender}")
+```
+
+We received a type checking error because as far as the type checker is concerned, the type of `transaction.parents[0]` is `Transaction`, not `BitcoinTransaction`. To fix this, we can use `Self`:
+
+```python
+from abc import ABC
+from typing import List, Self
+
+
+class Transaction(ABC):
+    def __init__(self, parents: List[Self]):
+        self.parents = parents
+
+class BitcoinTransaction(Transaction):
+    def __init__(self, sender: str, recipient: str, parents: List[Self]):
+        super().__init__(parents)
+        self.sender = sender
+        self.recipient = recipient
+
+
+parent = BitcoinTransaction(sender="Alice", recipient="Bob", parents=[])
+transaction = BitcoinTransaction(sender="Bob", recipient="Alice", parents=[parent])
+print(f"The parent sender is {transaction.parents[0].sender}")
+```
+
+_This feature was shipped in Python 3.11._
+
+
 - `Final` - you can read more about finals [here](https://mypy.readthedocs.io/en/stable/final_attrs.html) and in [PEP 591](https://www.python.org/dev/peps/pep-0591/).
-- `Literal` - you can read more about literals [here](https://mypy.readthedocs.io/en/stable/literal_types.html) and in [PEP 586](https://www.python.org/dev/peps/pep-0586/).
-- `Annotated` - you can read more about function and variable annotations [here]() and in [PEP 593](https://www.python.org/dev/peps/pep-0593/).
-
-<!-- - `TypedDict`- you can read more about typed dictionaries [here](https://adamj.eu/tech/2021/05/10/python-type-hints-how-to-use-typeddict/) and in [PEP 589](https://www.python.org/dev/peps/pep-0589/). -->
