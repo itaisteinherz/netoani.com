@@ -1,5 +1,5 @@
 ---
-title: Special Python Type Hints for Edge Cases
+title: Uncommon Python Type Hints for Special Cases
 date: 2023-08-25T11:37:52.768Z
 description: An overview of special Python type hints, created to enable type hinting of edge-cases in code and complex modules.
 ---
