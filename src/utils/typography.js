@@ -27,13 +27,32 @@ FairyGates.overrideThemeStyles = () => {
 		},
 		"details > *:last-child": {
 			marginBottom: 0
+		},
+		// Make code links look like links
+		"a > code[class*=language-]": {
+			color: "inherit",
+			textDecoration: "underline"
+		},
+		"a > code[class*=language-]:hover": {
+			textDecoration: "none"
 		}
 	};
 };
 
 delete FairyGates.googleFonts;
 
-const options = {...FairyGates, baseLineHeight: 1.5};
+const options = {
+	...FairyGates,
+	googleFonts: [
+		{
+			name: "Inter",
+			styles: ["400", "400i", "600", "700"]
+		}
+	],
+	headerFontFamily: ["Inter", "sans-serif"],
+	bodyFontFamily: ["Inter", "sans-serif"],
+	baseLineHeight: 1.8
+};
 
 const typography = new Typography(options);
 
