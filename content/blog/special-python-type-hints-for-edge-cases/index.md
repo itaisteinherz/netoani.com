@@ -1,37 +1,8 @@
 ---
 title: Special Python Type Hints for Edge Cases
-date: 2022-01-18T22:13:46.273Z
-description: Advanced typing features which you can use today to find more bugs during development and ship better code.
+date: 2023-08-25T11:37:52.768Z
+description: An overview of special Python type hints, created to enable type hinting of edge-cases in code and complex modules.
 ---
-
-TODO:
-
-- Maybe add note about `Any` vs. `object` - https://stackoverflow.com/a/39817126
-- Maybe mention `@overload`?
-- Maybe write about `Protocol`
-
-IMPORTANT:
-
-- Move all existing edge cases bullets to new article.
-- Change this article to be about:
-	- Generics and type variables
-	- Protocols and `@runtime_checkable`
-	- `@overload`
-	- Bonus:
-		- `Any` vs. `object`
-		- 
-
-- Other article will focus on edge cases solved by newer features:
-	- `ParamSpec` and `Concatenate`
-	- `TypeGuard`
-	- `TypedDict`
-	- Bonus:
-		- `GenericAlias` - aka `list[int]`, `type[my_obj]`, etc.
-		- `ClassVar`
-		- PEP 604
-		- `TypeAlias`
-		- `Literal`
-		- `Self` - https://www.python.org/dev/peps/pep-0673/
 
 ## Introduction
 
