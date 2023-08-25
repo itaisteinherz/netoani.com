@@ -10,7 +10,7 @@ Python is great at being a dynamically and strongly-typed programming language. 
 
 7 years have passed since then, and type hinting in Python has matured and evolved, with new features being implemented in every new Python version. In this post, I wanted to go over some of the more advanced and newly added features, with the hopes that you will find them useful and integrate them into your codebase.
 
-> This blogpost assumes you know the basics of type hinting in Python. If you don't, I recommend going over [this guide from Real Python](https://realpython.com/python-type-checking/).
+> A basic knowldge of type hinting in Python is assumed. If you need a refresher, I recommend [this guide from Real Python](https://realpython.com/python-type-checking/).
 
 ## Parameter specification variables
 
@@ -210,5 +210,6 @@ print(f"The parent sender is {transaction.parents[0].sender}")
 
 _This feature was shipped in Python 3.11._
 
+## Conclusion
 
-- `Final` - you can read more about finals [here](https://mypy.readthedocs.io/en/stable/final_attrs.html) and in [PEP 591](https://www.python.org/dev/peps/pep-0591/).
+The type hinting features we've explored should enable you to apply type checking to new categories of Python code, which previously couldn't benefit from automated type checking. I hope this post will inspire you to write code that is more declarative, documented and reliable.
