@@ -196,6 +196,7 @@ class Transaction(ABC):
     def __init__(self, parents: List[Self]):
         self.parents = parents
 
+
 class BitcoinTransaction(Transaction):
     def __init__(self, sender: str, recipient: str, parents: List[Self]):
         super().__init__(parents)
