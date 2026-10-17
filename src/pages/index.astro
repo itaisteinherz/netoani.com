@@ -41,10 +41,6 @@ const posts = await getPosts();
 		margin-top: 3rem;
 	}
 
-	article {
-		position: relative;
-	}
-
 	h2 {
 		margin: 0.25rem 0 0.5rem;
 		font-size: 2rem;
@@ -67,16 +63,28 @@ const posts = await getPosts();
 		color: var(--muted);
 	}
 
-	/* On wide screens the dates hang in the left margin, beside the titles */
+	/* On wide screens the dates hang in the left margin, on the titles' baseline */
 	@media (min-width: 68rem) {
+		article {
+			display: grid;
+			grid-template-columns: 8rem minmax(0, 1fr);
+			column-gap: 2rem;
+			align-items: baseline;
+			margin-left: -10rem;
+		}
+
 		article > :global(time) {
-			position: absolute;
-			top: 0.7rem;
-			right: calc(100% + 2rem);
+			text-align: right;
 			white-space: nowrap;
 		}
 
+		h2,
+		p {
+			grid-column: 2;
+		}
+
 		h2 {
+			grid-row: 1;
 			margin-top: 0;
 		}
 	}
