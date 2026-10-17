@@ -1,7 +1,6 @@
 import React from "react";
 import {Link} from "gatsby";
 
-import SiteNav from "./site-nav";
 import {rhythm, scale} from "../utils/typography";
 
 const Layout = ({title, children}) => {
@@ -40,7 +39,6 @@ const Layout = ({title, children}) => {
 						{title}
 					</Link>
 				</h1>
-				<SiteNav/>
 			</header>
 			<main>{children}</main>
 		</div>
