@@ -1,48 +1,44 @@
-import React from "react";
 import {Link} from "gatsby";
-
 import {rhythm, scale} from "../utils/typography";
 
-const Layout = ({title, children}) => {
-	return (
-		<div
+const Layout = ({title, children}) => (
+	<div
+		style={{
+			marginLeft: "auto",
+			marginRight: "auto",
+			maxWidth: rhythm(30),
+			padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+		}}
+	>
+		<header
 			style={{
-				marginLeft: "auto",
-				marginRight: "auto",
-				maxWidth: rhythm(30),
-				padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`
+				display: "flex",
+				alignItems: "baseline",
+				justifyContent: "space-between",
+				flexWrap: "wrap",
+				marginBottom: rhythm(2),
 			}}
 		>
-			<header
+			<h1
 				style={{
-					display: "flex",
-					alignItems: "baseline",
-					justifyContent: "space-between",
-					flexWrap: "wrap",
-					marginBottom: rhythm(2)
+					...scale(1 / 4),
+					marginTop: 0,
+					marginRight: rhythm(1),
+					marginBottom: 0,
 				}}
 			>
-				<h1
+				<Link
 					style={{
-						...scale(1 / 4),
-						marginTop: 0,
-						marginRight: rhythm(1),
-						marginBottom: 0
+						color: "inherit",
 					}}
+					to="/"
 				>
-					<Link
-						style={{
-							color: "inherit"
-						}}
-						to="/"
-					>
-						{title}
-					</Link>
-				</h1>
-			</header>
-			<main>{children}</main>
-		</div>
-	);
-};
+					{title}
+				</Link>
+			</h1>
+		</header>
+		<main>{children}</main>
+	</div>
+);
 
 export default Layout;

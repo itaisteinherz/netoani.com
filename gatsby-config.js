@@ -1,7 +1,8 @@
-const path = require("path");
+const path = require("node:path");
 
-/* eslint-disable camelcase */
+/* eslint-disable camelcase -- RSS feed fields use snake_case */
 module.exports = {
+	jsxRuntime: "automatic",
 	siteMetadata: {
 		title: "netoani.com",
 		author: "Itai Steinherz",
@@ -10,16 +11,16 @@ module.exports = {
 		social: {
 			twitter: "https://twitter.com/itaisteinherz",
 			github: "https://github.com/itaisteinherz",
-			email: "mailto:itai.steinherz@gmail.com"
-		}
+			email: "mailto:itai.steinherz@gmail.com",
+		},
 	},
 	plugins: [
 		{
 			resolve: "gatsby-source-filesystem",
 			options: {
 				path: path.join(__dirname, "content", "blog"),
-				name: "blog"
-			}
+				name: "blog",
+			},
 		},
 		{
 			resolve: "gatsby-transformer-remark",
@@ -29,14 +30,14 @@ module.exports = {
 					{
 						resolve: "gatsby-remark-responsive-iframe",
 						options: {
-							wrapperStyle: "margin-bottom: 1.0725rem"
-						}
+							wrapperStyle: "margin-bottom: 1.0725rem",
+						},
 					},
 					"gatsby-remark-prismjs",
 					"gatsby-remark-copy-linked-files",
-					"gatsby-remark-smartypants"
-				]
-			}
+					"gatsby-remark-smartypants",
+				],
+			},
 		},
 		"gatsby-transformer-sharp",
 		"gatsby-plugin-sharp",
@@ -44,8 +45,8 @@ module.exports = {
 			resolve: "gatsby-plugin-google-analytics",
 			options: {
 				trackingId: "UA-142187776-1",
-				respectDNT: true
-			}
+				respectDNT: true,
+			},
 		},
 		{
 			resolve: "gatsby-plugin-feed",
@@ -64,19 +65,17 @@ module.exports = {
 				`,
 				feeds: [
 					{
-						serialize: ({query: {site, allMarkdownRemark}}) => {
-							return allMarkdownRemark.nodes.map(node => {
-								return {
-									...node.frontmatter,
-									description: node.excerpt,
-									date: node.frontmatter.date,
-									url: site.siteMetadata.siteUrl + node.fields.slug,
-									guid: site.siteMetadata.siteUrl + node.fields.slug,
-									custom_elements: [{
-										"content:encoded": node.html
-									}]
-								};
-							});
+						serialize({query: {site, allMarkdownRemark}}) {
+							return allMarkdownRemark.nodes.map(node => ({
+								...node.frontmatter,
+								description: node.excerpt,
+								date: node.frontmatter.date,
+								url: site.siteMetadata.siteUrl + node.fields.slug,
+								guid: site.siteMetadata.siteUrl + node.fields.slug,
+								custom_elements: [{
+									"content:encoded": node.html,
+								}],
+							}));
 						},
 						query: `
 							{
@@ -98,19 +97,19 @@ module.exports = {
 							}
 						`,
 						output: "/rss.xml",
-						title: "netoani.com"
-					}
-				]
-			}
+						title: "netoani.com",
+					},
+				],
+			},
 		},
 		"gatsby-plugin-react-helmet",
 		"gatsby-plugin-offline",
 		{
 			resolve: "gatsby-plugin-typography",
 			options: {
-				pathToConfigModule: "src/utils/typography"
-			}
-		}
-	]
+				pathToConfigModule: "src/utils/typography",
+			},
+		},
+	],
 };
 /* eslint-enable camelcase */

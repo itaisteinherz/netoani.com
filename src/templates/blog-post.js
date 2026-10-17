@@ -1,6 +1,4 @@
-import React from "react";
 import {Link, graphql} from "gatsby";
-
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -23,19 +21,19 @@ const BlogPostTemplate = ({data, location}) => {
 			/>
 			<article
 				itemScope
-				itemType="http://schema.org/Article"
+				itemType="https://schema.org/Article"
 			>
 				<PageHeading
 					title={title}
 					date={date}
 				/>
 				<section
-					dangerouslySetInnerHTML={{__html: post.html}} // eslint-disable-line react/no-danger
+					dangerouslySetInnerHTML={{__html: post.html}} // eslint-disable-line @eslint-react/dom-no-dangerously-set-innerhtml -- Markdown rendered at build time
 					itemProp="articleBody"
 				/>
 				<hr
 					style={{
-						marginBottom: rhythm(1)
+						marginBottom: rhythm(1),
 					}}
 				/>
 				<footer>
@@ -50,30 +48,34 @@ const BlogPostTemplate = ({data, location}) => {
 						justifyContent: "space-between",
 						listStyle: "none",
 						margin: `0 0 ${rhythm(1)}`,
-						padding: 0
+						padding: 0,
 					}}
 				>
 					<li
 						style={{
-							marginRight: rhythm(1.5)
+							marginRight: rhythm(1.5),
 						}}
 					>
-						{previous ? (
-							<Link to={`/blog${previous.fields.slug}`} rel="prev">
-								← {previous.frontmatter.title}
-							</Link>
-						) : null}
+						{previous
+							? (
+								<Link to={`/blog${previous.fields.slug}`} rel="prev">
+									← {previous.frontmatter.title}
+								</Link>
+							)
+							: null}
 					</li>
 					<li
 						style={{
-							marginLeft: "auto"
+							marginLeft: "auto",
 						}}
 					>
-						{next ? (
-							<Link to={`/blog${next.fields.slug}`} rel="next">
-								{next.frontmatter.title} →
-							</Link>
-						) : null}
+						{next
+							? (
+								<Link to={`/blog${next.fields.slug}`} rel="next">
+									{next.frontmatter.title} →
+								</Link>
+							)
+							: null}
 					</li>
 				</ul>
 			</nav>

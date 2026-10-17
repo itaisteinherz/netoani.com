@@ -5,11 +5,7 @@
 	"description": "Itai Steinherz's website",
 	"license": "MIT",
 	"repository": "itaisteinherz/netoani.com",
-	"author": {
-		"name": "Itai Steinherz",
-		"email": "itaisteinherz@gmail.com",
-		"url": "github.com/itaisteinherz"
-	},
+	"author": "Itai Steinherz <itaisteinherz@gmail.com> (github.com/itaisteinherz)",
 	"engines": {
 		"node": ">=24"
 	},
@@ -49,46 +45,14 @@
 		"react-dom": "^18.3.1",
 		"react-helmet": "^6.1.0",
 		"react-typography": "^0.16.20",
-		"typeface-quattrocento-sans": "1.1.13",
-		"typeface-work-sans": "1.1.13",
+		"typeface-quattrocento-sans": "^1.1.13",
+		"typeface-work-sans": "^1.1.13",
 		"typography": "^0.16.21",
 		"typography-theme-fairy-gates": "^0.16.19"
 	},
 	"devDependencies": {
-		"eslint-config-xo-react": "^0.23.0",
-		"eslint-plugin-react": "^7.20.6",
-		"eslint-plugin-react-hooks": "^4.1.0",
-		"xo": "^0.33.1"
-	},
-	"xo": {
-		"extends": "xo-react",
-		"envs": [
-			"node",
-			"browser"
-		],
-		"ignores": [
-			".cache",
-			"public"
-		],
-		"rules": {
-			"quotes": [
-				"error",
-				"double"
-			],
-			"unicorn/filename-case": "off",
-			"react/prop-types": "off",
-			"react/jsx-pascal-case": [
-				"error",
-				{
-					"allowAllCaps": true
-				}
-			],
-			"import/extensions": [
-				"error",
-				{
-					"css": "always"
-				}
-			]
-		}
+		"eslint-config-xo-react": "^0.32.0",
+		"globals": "^17.13.0",
+		"xo": "^5.0.1"
 	}
 }
