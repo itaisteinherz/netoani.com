@@ -25,7 +25,6 @@
 	"dependencies": {
 		"gatsby": "^5.16.1",
 		"gatsby-plugin-feed": "^5.16.0",
-		"gatsby-plugin-google-analytics": "^5.16.0",
 		"gatsby-plugin-offline": "^6.16.0",
 		"gatsby-plugin-sharp": "^5.16.0",
 		"gatsby-plugin-typography": "^5.16.0",
