@@ -1,18 +1,18 @@
 ---
-import {formatDate} from "../posts.js";
+import {formatDate, formatMonth} from "../posts.js";
 
-const {date} = Astro.props;
+// Shows only the month and year when `month` is set
+const {date, month = false} = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>{formatDate(date)}</time>
+<time datetime={date.toISOString()}>{month ? formatMonth(date) : formatDate(date)}</time>
 
 <style>
 	time {
-		display: block;
-		margin-bottom: 0.36rem;
-		color: hsla(0, 0%, 0%, 0.55);
-		font-size: 0.75786rem;
+		color: var(--muted);
+		font-family: var(--sans);
+		font-size: 0.875rem;
 		font-weight: 500;
-		line-height: 1;
+		font-variant-numeric: lining-nums tabular-nums;
 	}
 </style>

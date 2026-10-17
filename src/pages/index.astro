@@ -8,18 +8,17 @@ const posts = await getPosts();
 ---
 
 <Layout title="All posts">
+	<h1 class="visually-hidden">All posts</h1>
 	<ol>
 		{posts.toReversed().map(post => (
 			<li>
 				<article itemscope itemtype="https://schema.org/Article">
-					<header>
-						<h2>
-							<a href={postUrl(post)} itemprop="url">
-								<span itemprop="headline">{post.data.title}</span>
-							</a>
-						</h2>
-						<Date date={post.data.date}/>
-					</header>
+					<Date date={post.data.date} month/>
+					<h2>
+						<a href={postUrl(post)} itemprop="url">
+							<span itemprop="headline">{post.data.title}</span>
+						</a>
+					</h2>
 					<p itemprop="description">{post.data.description}</p>
 				</article>
 			</li>
@@ -38,16 +37,55 @@ const posts = await getPosts();
 		list-style: none;
 	}
 
-	li {
-		margin-top: 1.8rem;
+	li + li {
+		margin-top: 3rem;
 	}
 
 	h2 {
-		margin-bottom: 1.8rem;
+		margin: 0.25rem 0 0.5rem;
+		font-size: 2rem;
+		font-weight: 300;
+		line-height: 1.15;
+		letter-spacing: -0.015em;
 	}
 
-	hr {
-		margin-top: 1.8rem;
-		margin-bottom: 1.8rem;
+	h2 a {
+		color: var(--ink);
+		text-decoration: none;
+	}
+
+	h2 a:hover {
+		color: var(--link);
+	}
+
+	p {
+		margin: 0;
+		color: var(--muted);
+	}
+
+	/* On wide screens the dates hang in the left margin, on the titles' baseline */
+	@media (min-width: 68rem) {
+		article {
+			display: grid;
+			grid-template-columns: 8rem minmax(0, 1fr);
+			column-gap: 2rem;
+			align-items: baseline;
+			margin-left: -10rem;
+		}
+
+		article > :global(time) {
+			text-align: right;
+			white-space: nowrap;
+		}
+
+		h2,
+		p {
+			grid-column: 2;
+		}
+
+		h2 {
+			grid-row: 1;
+			margin-top: 0;
+		}
 	}
 </style>

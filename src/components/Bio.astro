@@ -2,6 +2,19 @@
 import {site} from "../site.js";
 ---
 
-<p>
-	I'm <strong>{site.author}</strong>, a software developer from Israel. You can follow me on <a href={site.social.twitter}>Twitter</a> and <a href={site.social.github}>GitHub</a>.
+<p class="bio">
+	I'm <strong>{site.author}</strong>, a software engineer and security researcher from Israel.
+	You can follow me on <a href={site.social.twitter}>Twitter</a> and <a href={site.social.github}>GitHub</a>.
 </p>
+
+<style>
+	.bio {
+		margin: 0;
+		color: var(--muted);
+	}
+
+	.bio strong {
+		color: var(--ink);
+		font-weight: 650;
+	}
+</style>
