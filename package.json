@@ -6,57 +6,31 @@
 	"license": "MIT",
 	"repository": "itaisteinherz/netoani.com",
 	"author": "Itai Steinherz <itaisteinherz@gmail.com> (github.com/itaisteinherz)",
+	"type": "module",
 	"engines": {
 		"node": ">=24"
 	},
 	"scripts": {
-		"develop": "gatsby develop",
-		"build": "gatsby build",
-		"serve": "gatsby serve",
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
 		"test": "xo"
 	},
 	"keywords": [
-		"gatsby",
+		"astro",
 		"blog",
 		"personal",
 		"programming",
 		"thoughts"
 	],
 	"dependencies": {
-		"gatsby": "^5.16.1",
-		"gatsby-plugin-feed": "^5.16.0",
-		"gatsby-plugin-sharp": "^5.16.0",
-		"gatsby-plugin-typography": "^5.16.0",
-		"gatsby-remark-copy-linked-files": "^6.16.0",
-		"gatsby-remark-images": "^7.16.0",
-		"gatsby-remark-prismjs": "^7.16.0",
-		"gatsby-remark-responsive-iframe": "^6.16.0",
-		"gatsby-remark-smartypants": "^6.16.0",
-		"gatsby-source-filesystem": "^5.16.0",
-		"gatsby-transformer-remark": "^6.16.0",
-		"gatsby-transformer-sharp": "^5.16.0",
-		"gray-percentage": "^2.0.0",
-		"prismjs": "^1.30.0",
-		"react": "^19.3.1",
-		"react-dom": "^19.3.1",
-		"react-typography": "^0.16.23",
-		"typeface-quattrocento-sans": "^1.1.13",
-		"typeface-work-sans": "^1.1.13",
-		"typography": "^0.16.24",
-		"typography-theme-fairy-gates": "^0.16.19"
+		"@astrojs/rss": "^4.0.19",
+		"@shikijs/transformers": "^4.5.0",
+		"astro": "^7.4.0"
 	},
 	"devDependencies": {
-		"eslint-config-xo-react": "^0.32.0",
+		"eslint-plugin-astro": "^3.2.1",
 		"globals": "^17.13.0",
 		"xo": "^5.0.1"
-	},
-	"overrides": {
-		"@gatsbyjs/reach-router": {
-			"react": "$react",
-			"react-dom": "$react-dom"
-		},
-		"react-typography": {
-			"react": "$react"
-		}
 	}
 }

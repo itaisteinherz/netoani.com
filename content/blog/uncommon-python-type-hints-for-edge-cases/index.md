@@ -49,7 +49,7 @@ This is because the the decorated `add` has the typing `Callable[..., int]` (wit
 
 Using `ParamSpec`, we can modify the example above to enforce the parameters types of the decorated method, while maintaining the decorator's flexibility:
 
-```python{1,3,7-8}
+```python {1,3,7-8}
 from typing import Callable, ParamSpec, TypeVar
 
 P = ParamSpec('P')
@@ -98,7 +98,7 @@ def print_value_type(value: object):
 
 The above code is valid, however static type checkers will report an error. This is because a type checker doesn't have enough information to verify that `value` is a number. Using `TypeGuard`, introduced in [PEP 647](https://www.python.org/dev/peps/pep-0647/), we can enable type narrowing by changing the return type hint of `is_real_numeber` to `TypeGuard[RealNumber]`. This will signal to type checkers that if the method returns `True`, `value` is of type `RealNumber` (and if it returns `False`, it isn't). Now, type checkers won't report any errors:
 
-```python{1,6}
+```python {1,6}
 from typing import Union, TypeGuard
 
 RealNumber = Union[int, float]
