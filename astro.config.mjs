@@ -6,8 +6,8 @@ export default defineConfig({
 	markdown: {
 		shikiConfig: {
 			themes: {
-				light: "vitesse-light",
-				dark: "vitesse-dark",
+				light: "github-light",
+				dark: "github-dark-dimmed",
 			},
 			// Follows the page's color-scheme, which the theme toggle sets
 			defaultColor: "light-dark()",

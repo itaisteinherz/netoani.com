@@ -1,10 +1,11 @@
 :root {
 	color-scheme: light dark;
-	--paper: light-dark(#fbfdfc, #0f1a18);
+	--paper: light-dark(#fbfdfc, #18211f);
 	--ink: light-dark(#16302b, #dbe7e4);
-	--muted: light-dark(#5d706b, #8ea29d);
-	--rule: light-dark(#dbe6e3, #24362f);
-	--tint: light-dark(#eef5f3, #16241f);
+	--muted: light-dark(#5d706b, #97aaa5);
+	--rule: light-dark(#dbe6e3, #2d3c39);
+	--tint: light-dark(#eef5f3, #212c2a);
+	--code: light-dark(#f3f4f4, #20272a);
 	--accent: light-dark(#1ca086, #2fc4a6);
 	--link: light-dark(#0b7564, #5ed4bc);
 	--serif: "Newsreader", "Iowan Old Style", Georgia, serif;
@@ -174,7 +175,7 @@ code {
 :not(pre) > code {
 	padding: 0.1em 0.3em;
 	border-radius: 3px;
-	background: var(--tint);
+	background: var(--code);
 	overflow-wrap: anywhere;
 }
 
@@ -183,7 +184,7 @@ pre.astro-code {
 	margin-inline: -1.25rem;
 	padding: 1rem 1.25rem;
 	border-radius: 6px;
-	background-color: var(--tint) !important;
+	background-color: var(--code) !important;
 	font-size: 0.875rem;
 	line-height: 1.65;
 	tab-size: 4;
@@ -202,7 +203,7 @@ pre.astro-code .line.highlighted {
 	margin-inline: -1.25rem;
 	padding-inline: calc(1.25rem - 2px) 1.25rem;
 	border-left: 2px solid var(--accent);
-	background: color-mix(in srgb, var(--accent) 12%, transparent);
+	background: color-mix(in srgb, var(--accent) 10%, transparent);
 }
 
 /* Hidden visually but still read by screen readers */
