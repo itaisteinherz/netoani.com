@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal website and blog (netoani.com) built with Astro 7 as a fully static site (no client-side JavaScript). Package manager is npm, with a committed `package-lock.json`. Use Node 24, which is pinned in `.node-version` and managed with fnm (`fnm use`).
+Personal website and blog (netoani.com) built with Astro 7 as a static site. The only client-side JavaScript is the theme toggle. Package manager is npm, with a committed `package-lock.json`. Use Node 24, which is pinned in `.node-version` and managed with fnm (`fnm use`).
 
 The site is deployed by Netlify, which builds every PR as a deploy preview. The build command and publish directory are set in `netlify.toml`, and Netlify reads `.node-version` to choose the Node version for the build.
 
@@ -25,6 +25,7 @@ xo 5 with `eslint-plugin-astro`, configured in `xo.config.mjs` (flat config), wh
 - **Blog posts** are Markdown files at `content/blog/<slug>/index.md`, with frontmatter `title`, `date` (ISO timestamp) and `description`. They're loaded as the `blog` content collection, whose schema is in `src/content.config.js`. Helpers for sorting posts, building their URLs (`/blog/<slug>/`) and formatting dates are in `src/posts.js`.
 - **Code highlighting** is done by Shiki at build time (configured in `astro.config.mjs`). Lines are highlighted by listing them in the code fence's meta, with a space after the language: ```` ```python {1,3-4} ````.
 - **Pages** in `src/pages/` are file-routed: the index, `blog/[id].astro` for posts (with previous/next links), 404 and the RSS feed (`rss.xml.js`). They all use `src/layouts/Layout.astro`, which sets the head tags and the site header.
-- **Styling** is global CSS in `src/styles/global.css` (ported from the typography.js theme the site used under Gatsby, with a 1.8rem vertical rhythm) plus scoped `<style>` blocks in components.
+- **Styling** is global CSS in `src/styles/global.css` plus scoped `<style>` blocks in components. Fonts are Newsreader (text), Geist (wordmark, dates and labels) and Geist Mono (code), loaded from Google Fonts in the layout.
+- **Theming:** color tokens on `:root` use CSS `light-dark()`, and Shiki emits `light-dark()` colors too (`defaultColor` in `astro.config.mjs`), so the theme switches by changing only `color-scheme`. It follows the system setting by default. `src/components/ThemeToggle.astro` sets `data-theme` on `<html>` and saves an explicit choice in `localStorage`, which an inline script in the layout applies before the page paints.
 - **Site metadata** (title, author, social links) lives in `src/site.js`.
 - `public/` is copied as-is to the site root. `public/sw.js` unregisters the service worker that an older version of the site installed, so keep it.
