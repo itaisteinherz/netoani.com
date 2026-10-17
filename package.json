@@ -38,13 +38,13 @@
 		"gatsby-transformer-remark": "^6.16.0",
 		"gatsby-transformer-sharp": "^5.16.0",
 		"gray-percentage": "^2.0.0",
-		"prismjs": "^1.27.0",
+		"prismjs": "^1.30.0",
 		"react": "^19.3.1",
 		"react-dom": "^19.3.1",
-		"react-typography": "^0.16.20",
+		"react-typography": "^0.16.23",
 		"typeface-quattrocento-sans": "^1.1.13",
 		"typeface-work-sans": "^1.1.13",
-		"typography": "^0.16.21",
+		"typography": "^0.16.24",
 		"typography-theme-fairy-gates": "^0.16.19"
 	},
 	"devDependencies": {
