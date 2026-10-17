@@ -1,4 +1,4 @@
-My personal website, built using Gatsby and based on the [Gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog).
+My personal website, built using [Astro](https://astro.build).
 
 ## Getting Started
 
@@ -11,7 +11,7 @@ $ npm install
 For local development:
 
 ```bash
-$ npm run develop
+$ npm run dev
 ```
 
 For the production build:
