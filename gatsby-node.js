@@ -1,7 +1,7 @@
 const path = require("node:path");
 const {createFilePath} = require("gatsby-source-filesystem");
 
-exports.createPages = async ({graphql, actions}) => {
+exports.createPages = async ({graphql, actions, reporter}) => {
 	const {createPage} = actions;
 
 	// Define a template for blog post
@@ -27,7 +27,7 @@ exports.createPages = async ({graphql, actions}) => {
 	);
 
 	if (result.errors) {
-		reporter.panicOnBuild( // eslint-disable-line no-undef
+		reporter.panicOnBuild(
 			"Failed to load blogposts",
 			result.errors,
 		);
