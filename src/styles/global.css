@@ -1,11 +1,11 @@
 :root {
 	color-scheme: light dark;
-	--paper: light-dark(#fbfdfc, #18211f);
+	--paper: light-dark(#f2f4f3, #18211f);
 	--ink: light-dark(#16302b, #dbe7e4);
 	--muted: light-dark(#5d706b, #97aaa5);
 	--rule: light-dark(#dbe6e3, #2d3c39);
-	--tint: light-dark(#eef5f3, #212c2a);
-	--code: light-dark(#f3f4f4, #20272a);
+	--tint: light-dark(#e5ebe9, #212c2a);
+	--code: light-dark(#ffffff, #20272a);
 	--accent: light-dark(#1ca086, #2fc4a6);
 	--link: light-dark(#0b7564, #5ed4bc);
 	--serif: "Newsreader", "Iowan Old Style", Georgia, serif;
