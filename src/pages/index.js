@@ -12,7 +12,6 @@ const Homepage = ({data, location}) => {
 	if (posts.length === 0) {
 		return (
 			<Layout location={location} title={siteTitle}>
-				<Bio/>
 				<p>
 					No blog posts found. Add markdown posts to&nbsp;
 					<pre
@@ -24,19 +23,15 @@ const Homepage = ({data, location}) => {
 					</pre>
 					.
 				</p>
+				<footer>
+					<Bio/>
+				</footer>
 			</Layout>
 		);
 	}
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<Bio/>
-			<hr
-				style={{
-					marginBottom: 0,
-				}}
-			/>
-
 			{/* TODO: Create a component for a blogpost row */}
 			<ol
 				style={{
@@ -96,6 +91,15 @@ const Homepage = ({data, location}) => {
 					);
 				})}
 			</ol>
+			<hr
+				style={{
+					marginTop: rhythm(1),
+					marginBottom: rhythm(1),
+				}}
+			/>
+			<footer>
+				<Bio/>
+			</footer>
 		</Layout>
 	);
 };
