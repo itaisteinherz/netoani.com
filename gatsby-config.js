@@ -23,13 +23,6 @@ module.exports = {
 			}
 		},
 		{
-			resolve: "gatsby-source-filesystem",
-			options: {
-				path: path.join(__dirname, "content", "assets"),
-				name: "assets"
-			}
-		},
-		{
 			resolve: "gatsby-transformer-remark",
 			options: {
 				plugins: [
@@ -109,19 +102,6 @@ module.exports = {
 						title: "netoani.com"
 					}
 				]
-			}
-		},
-		{
-			resolve: "gatsby-plugin-manifest",
-			options: {
-				name: "Itai Steinherz's personal blog",
-				short_name: "netoani.com",
-				start_url: "/",
-				background_color: "#ffffff",
-				theme_color: "#4b9d87",
-				display: "minimal-ui",
-				// TODO: Create a normal favicon for the website
-				icon: "content/assets/profile-pic.jpg"
 			}
 		},
 		"gatsby-plugin-react-helmet",
