@@ -10,7 +10,7 @@ export const postUrl = post => `/blog/${post.id}/`;
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
 	month: "long",
-	day: "2-digit",
+	day: "numeric",
 	year: "numeric",
 	timeZone: "UTC",
 });
