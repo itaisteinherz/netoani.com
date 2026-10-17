@@ -24,7 +24,7 @@ const BlogPostTemplate = ({data, location}) => {
 					date={date}
 				/>
 				<section
-					dangerouslySetInnerHTML={{__html: post.html}} // eslint-disable-line @eslint-react/dom-no-dangerously-set-innerhtml -- Markdown rendered at build time
+					dangerouslySetInnerHTML={{__html: post.html}}
 					itemProp="articleBody"
 				/>
 				<hr

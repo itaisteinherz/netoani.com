@@ -54,7 +54,6 @@ const options = {
 const typography = new Typography(options);
 
 // Hot reload typography in development
-// eslint-disable-next-line n/prefer-global/process -- Webpack replaces process.env.NODE_ENV at build time
 if (process.env.NODE_ENV !== "production") {
 	typography.injectStyles();
 }

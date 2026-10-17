@@ -85,7 +85,7 @@ const Homepage = ({data, location}) => {
 								</header>
 								<section>
 									<p
-										dangerouslySetInnerHTML={{ // eslint-disable-line @eslint-react/dom-no-dangerously-set-innerhtml -- Markdown rendered at build time
+										dangerouslySetInnerHTML={{
 											__html: post.frontmatter.description || post.excerpt,
 										}}
 										itemProp="description"

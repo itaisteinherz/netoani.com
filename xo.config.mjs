@@ -31,6 +31,30 @@ const xoConfig = [
 			"n/prefer-process-get-builtin-module": "off",
 		},
 	},
+	// Gatsby's development server lints src/ with its own ESLint setup, which
+	// fails on disable comments for rules it doesn't know, so per-file
+	// exceptions live here instead
+	{
+		files: "gatsby-browser.js",
+		rules: {
+			// Fonts and styles are imported for their side effects
+			"import-x/no-unassigned-import": "off",
+		},
+	},
+	{
+		files: ["src/pages/index.js", "src/templates/blog-post.js"],
+		rules: {
+			// Post HTML is rendered from Markdown at build time
+			"@eslint-react/dom-no-dangerously-set-innerhtml": "off",
+		},
+	},
+	{
+		files: "src/utils/typography.js",
+		rules: {
+			// Webpack replaces process.env.NODE_ENV at build time
+			"n/prefer-global/process": "off",
+		},
+	},
 	{
 		files: "package.json",
 		rules: {
