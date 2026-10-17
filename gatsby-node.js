@@ -1,7 +1,7 @@
-const path = require("path");
+const path = require("node:path");
 const {createFilePath} = require("gatsby-source-filesystem");
 
-exports.createPages = async ({graphql, actions}) => {
+exports.createPages = async ({graphql, actions, reporter}) => {
 	const {createPage} = actions;
 
 	// Define a template for blog post
@@ -12,7 +12,7 @@ exports.createPages = async ({graphql, actions}) => {
 		`
 			{
 				allMarkdownRemark(
-					sort: { fields: [frontmatter___date], order: DESC }
+					sort: { frontmatter: { date: DESC } }
 					limit: 1000
 				) {
 					nodes {
@@ -23,13 +23,13 @@ exports.createPages = async ({graphql, actions}) => {
 					}
 				}
 			}
-		`
+		`,
 	);
 
 	if (result.errors) {
-		reporter.panicOnBuild( // eslint-disable-line no-undef
+		reporter.panicOnBuild(
 			"Failed to load blogposts",
-			result.errors
+			result.errors,
 		);
 
 		return;
@@ -41,22 +41,20 @@ exports.createPages = async ({graphql, actions}) => {
 	// But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
 	// `context` is available in the template as a prop and as a variable in GraphQL
 
-	if (posts.length > 0) {
-		posts.forEach((post, index) => {
-			// Note: these have been logically reversed because the posts are ordered from latest to oldest, but we
-			// want the previous post to be the older post and the next post to be the newer one.
-			const previousPostId = index === posts.length - 1 ? null : posts[index + 1].id;
-			const nextPostId = index === 0 ? null : posts[index - 1].id;
+	for (const [index, post] of posts.entries()) {
+		// Note: these have been logically reversed because the posts are ordered from latest to oldest, but we
+		// want the previous post to be the older post and the next post to be the newer one.
+		const previousPostId = index === posts.length - 1 ? null : posts[index + 1].id;
+		const nextPostId = index === 0 ? null : posts[index - 1].id;
 
-			createPage({
-				path: path.join("/blog", post.fields.slug),
-				component: blogPost,
-				context: {
-					id: post.id,
-					previousPostId,
-					nextPostId
-				}
-			});
+		createPage({
+			path: path.join("/blog", post.fields.slug),
+			component: blogPost,
+			context: {
+				id: post.id,
+				previousPostId,
+				nextPostId,
+			},
 		});
 	}
 };
@@ -64,15 +62,17 @@ exports.createPages = async ({graphql, actions}) => {
 exports.onCreateNode = ({node, actions, getNode}) => {
 	const {createNodeField} = actions;
 
-	if (node.internal.type === "MarkdownRemark") {
-		const value = createFilePath({node, getNode});
-
-		createNodeField({
-			name: "slug",
-			node,
-			value
-		});
+	if (node.internal.type !== "MarkdownRemark") {
+		return;
 	}
+
+	const value = createFilePath({node, getNode});
+
+	createNodeField({
+		name: "slug",
+		node,
+		value,
+	});
 };
 
 exports.createSchemaCustomization = ({actions}) => {

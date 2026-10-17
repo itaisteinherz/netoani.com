@@ -5,17 +5,17 @@ My personal website, built using Gatsby and based on the [Gatsby starter blog](h
 Install the dependencies:
 
 ```bash
-$ yarn
+$ npm install
 ```
 
 For local development:
 
 ```bash
-$ yarn develop
+$ npm run develop
 ```
 
 For the production build:
 
 ```bash
-$ yarn build
+$ npm run build
 ```

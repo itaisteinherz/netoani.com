@@ -1,6 +1,4 @@
-import React from "react";
 import {Link, graphql} from "gatsby";
-
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -11,31 +9,27 @@ const BlogPostTemplate = ({data, location}) => {
 	const post = data.markdownRemark;
 	const siteTitle = data.site.siteMetadata?.title;
 
-	const {title, date, description} = post.frontmatter;
+	const {title, date} = post.frontmatter;
 
 	const {previous, next} = data;
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<Seo
-				title={title}
-				description={description || post.excerpt}
-			/>
 			<article
 				itemScope
-				itemType="http://schema.org/Article"
+				itemType="https://schema.org/Article"
 			>
 				<PageHeading
 					title={title}
 					date={date}
 				/>
 				<section
-					dangerouslySetInnerHTML={{__html: post.html}} // eslint-disable-line react/no-danger
+					dangerouslySetInnerHTML={{__html: post.html}}
 					itemProp="articleBody"
 				/>
 				<hr
 					style={{
-						marginBottom: rhythm(1)
+						marginBottom: rhythm(1),
 					}}
 				/>
 				<footer>
@@ -50,30 +44,34 @@ const BlogPostTemplate = ({data, location}) => {
 						justifyContent: "space-between",
 						listStyle: "none",
 						margin: `0 0 ${rhythm(1)}`,
-						padding: 0
+						padding: 0,
 					}}
 				>
 					<li
 						style={{
-							marginRight: rhythm(1.5)
+							marginRight: rhythm(1.5),
 						}}
 					>
-						{previous ? (
-							<Link to={`/blog${previous.fields.slug}`} rel="prev">
-								← {previous.frontmatter.title}
-							</Link>
-						) : null}
+						{previous
+							? (
+								<Link to={`/blog${previous.fields.slug}`} rel="prev">
+									← {previous.frontmatter.title}
+								</Link>
+							)
+							: null}
 					</li>
 					<li
 						style={{
-							marginLeft: "auto"
+							marginLeft: "auto",
 						}}
 					>
-						{next ? (
-							<Link to={`/blog${next.fields.slug}`} rel="next">
-								{next.frontmatter.title} →
-							</Link>
-						) : null}
+						{next
+							? (
+								<Link to={`/blog${next.fields.slug}`} rel="next">
+									{next.frontmatter.title} →
+								</Link>
+							)
+							: null}
 					</li>
 				</ul>
 			</nav>
@@ -82,6 +80,18 @@ const BlogPostTemplate = ({data, location}) => {
 };
 
 export default BlogPostTemplate;
+
+export const Head = ({data}) => {
+	const post = data.markdownRemark;
+	const {title, description} = post.frontmatter;
+
+	return (
+		<Seo
+			title={title}
+			description={description || post.excerpt}
+		/>
+	);
+};
 
 export const pageQuery = graphql`
 	query BlogPostBySlug(
