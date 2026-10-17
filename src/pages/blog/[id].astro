@@ -61,8 +61,8 @@ const {Content} = await render(post);
 
 	h1 {
 		margin: 0.5rem 0 1rem;
-		font-size: clamp(2.25rem, 7vw, 3.25rem);
-		font-weight: 300;
+		font-size: clamp(2.5rem, 7vw, 3.75rem);
+		font-weight: 250;
 		line-height: 1.08;
 		letter-spacing: -0.025em;
 	}
@@ -70,8 +70,9 @@ const {Content} = await render(post);
 	.standfirst {
 		margin: 0;
 		color: var(--muted);
-		font-size: 1.3125rem;
+		font-size: 1.375rem;
 		font-style: italic;
+		font-weight: 300;
 		line-height: 1.45;
 	}
 
@@ -98,7 +99,9 @@ const {Content} = await render(post);
 		display: block;
 		margin-bottom: 0.25rem;
 		color: var(--muted);
-		font-size: 0.9375rem;
+		font-family: var(--sans);
+		font-size: 0.875rem;
+		font-weight: 500;
 	}
 
 	.next {

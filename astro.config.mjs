@@ -9,6 +9,8 @@ export default defineConfig({
 				light: "vitesse-light",
 				dark: "vitesse-dark",
 			},
+			// Follows the page's color-scheme, which the theme toggle sets
+			defaultColor: "light-dark()",
 			// Highlights the lines listed in a code fence's meta, e.g. ```python {1,3-4}
 			transformers: [transformerMetaHighlight()],
 		},

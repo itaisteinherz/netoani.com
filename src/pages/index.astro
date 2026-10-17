@@ -43,8 +43,9 @@ const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullY
 	h2 {
 		margin: 0 0 1rem;
 		color: var(--muted);
-		font-size: 0.9375rem;
-		font-weight: 400;
+		font-family: var(--sans);
+		font-size: 0.875rem;
+		font-weight: 500;
 		font-variant-numeric: lining-nums tabular-nums;
 		line-height: inherit;
 	}
@@ -61,8 +62,8 @@ const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullY
 
 	h3 {
 		margin: 0 0 0.5rem;
-		font-size: 1.75rem;
-		font-weight: 400;
+		font-size: 2rem;
+		font-weight: 300;
 		line-height: 1.15;
 		letter-spacing: -0.015em;
 	}
@@ -85,7 +86,7 @@ const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullY
 	@media (min-width: 60rem) {
 		h2 {
 			position: absolute;
-			top: 0.45rem;
+			top: 0.7rem;
 			right: calc(100% + 2rem);
 			margin: 0;
 		}

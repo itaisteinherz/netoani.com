@@ -1,27 +1,25 @@
 :root {
 	color-scheme: light dark;
-	--paper: #fbfdfc;
-	--ink: #16302b;
-	--muted: #5d706b;
-	--rule: #dbe6e3;
-	--tint: #eef5f3;
-	--accent: #1ca086;
-	--link: #0b7564;
+	--paper: light-dark(#fbfdfc, #0f1a18);
+	--ink: light-dark(#16302b, #dbe7e4);
+	--muted: light-dark(#5d706b, #8ea29d);
+	--rule: light-dark(#dbe6e3, #24362f);
+	--tint: light-dark(#eef5f3, #16241f);
+	--accent: light-dark(#1ca086, #2fc4a6);
+	--link: light-dark(#0b7564, #5ed4bc);
 	--serif: "Newsreader", "Iowan Old Style", Georgia, serif;
-	--mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-	--measure: 36rem;
+	--sans: "Geist", system-ui, sans-serif;
+	--mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+	--measure: 42rem;
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--paper: #0f1a18;
-		--ink: #dbe7e4;
-		--muted: #8ea29d;
-		--rule: #24362f;
-		--tint: #16241f;
-		--accent: #2fc4a6;
-		--link: #5ed4bc;
-	}
+/* The theme toggle overrides the system setting */
+:root[data-theme="light"] {
+	color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+	color-scheme: dark;
 }
 
 *,
@@ -74,7 +72,7 @@ h2,
 h3,
 h4 {
 	margin: 2.4em 0 0.6em;
-	font-weight: 500;
+	font-weight: 650;
 	line-height: 1.2;
 	letter-spacing: -0.01em;
 	text-wrap: balance;
@@ -120,7 +118,7 @@ li::marker {
 }
 
 strong {
-	font-weight: 600;
+	font-weight: 650;
 }
 
 hr {
@@ -163,7 +161,7 @@ td {
 }
 
 th {
-	font-weight: 600;
+	font-weight: 650;
 }
 
 code {
@@ -195,15 +193,6 @@ pre.astro-code code {
 	display: block;
 	min-width: max-content;
 	font-size: inherit;
-}
-
-@media (prefers-color-scheme: dark) {
-	pre.astro-code,
-	pre.astro-code span {
-		color: var(--shiki-dark) !important;
-		font-style: var(--shiki-dark-font-style) !important;
-		font-weight: var(--shiki-dark-font-weight) !important;
-	}
 }
 
 /* Lines listed in a code fence's meta */
