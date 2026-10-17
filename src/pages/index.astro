@@ -1,33 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Bio from "../components/Bio.astro";
+import Date from "../components/Date.astro";
 import {getPosts, postUrl} from "../posts.js";
 
 const posts = await getPosts();
-const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullYear());
 ---
 
 <Layout title="All posts">
 	<h1 class="visually-hidden">All posts</h1>
-	{[...years].map(([year, yearPosts]) => (
-		<section class="year">
-			<h2>{year}</h2>
-			<ol>
-				{yearPosts.map(post => (
-					<li>
-						<article itemscope itemtype="https://schema.org/Article">
-							<h3>
-								<a href={postUrl(post)} itemprop="url">
-									<span itemprop="headline">{post.data.title}</span>
-								</a>
-							</h3>
-							<p itemprop="description">{post.data.description}</p>
-						</article>
-					</li>
-				))}
-			</ol>
-		</section>
-	))}
+	<ol>
+		{posts.toReversed().map(post => (
+			<li>
+				<article itemscope itemtype="https://schema.org/Article">
+					<Date date={post.data.date} month/>
+					<h2>
+						<a href={postUrl(post)} itemprop="url">
+							<span itemprop="headline">{post.data.title}</span>
+						</a>
+					</h2>
+					<p itemprop="description">{post.data.description}</p>
+				</article>
+			</li>
+		))}
+	</ol>
 	<hr>
 	<footer>
 		<Bio/>
@@ -35,21 +31,6 @@ const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullY
 </Layout>
 
 <style>
-	.year {
-		position: relative;
-		margin-bottom: 3rem;
-	}
-
-	h2 {
-		margin: 0 0 1rem;
-		color: var(--muted);
-		font-family: var(--sans);
-		font-size: 0.875rem;
-		font-weight: 500;
-		font-variant-numeric: lining-nums tabular-nums;
-		line-height: inherit;
-	}
-
 	ol {
 		margin: 0;
 		padding: 0;
@@ -57,23 +38,27 @@ const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullY
 	}
 
 	li + li {
-		margin-top: 2.5rem;
+		margin-top: 3rem;
 	}
 
-	h3 {
-		margin: 0 0 0.5rem;
+	article {
+		position: relative;
+	}
+
+	h2 {
+		margin: 0.25rem 0 0.5rem;
 		font-size: 2rem;
 		font-weight: 300;
 		line-height: 1.15;
 		letter-spacing: -0.015em;
 	}
 
-	h3 a {
+	h2 a {
 		color: var(--ink);
 		text-decoration: none;
 	}
 
-	h3 a:hover {
+	h2 a:hover {
 		color: var(--link);
 	}
 
@@ -82,13 +67,17 @@ const years = Map.groupBy(posts.toReversed(), post => post.data.date.getUTCFullY
 		color: var(--muted);
 	}
 
-	/* On wide screens the years hang in the left margin, beside the first title */
-	@media (min-width: 60rem) {
-		h2 {
+	/* On wide screens the dates hang in the left margin, beside the titles */
+	@media (min-width: 68rem) {
+		article > :global(time) {
 			position: absolute;
 			top: 0.7rem;
 			right: calc(100% + 2rem);
-			margin: 0;
+			white-space: nowrap;
+		}
+
+		h2 {
+			margin-top: 0;
 		}
 	}
 </style>

@@ -10,8 +10,17 @@ export const postUrl = post => `/blog/${post.id}/`;
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
 	month: "long",
+	day: "numeric",
+	year: "numeric",
+	timeZone: "UTC",
+});
+
+const monthFormat = new Intl.DateTimeFormat("en-US", {
+	month: "long",
 	year: "numeric",
 	timeZone: "UTC",
 });
 
 export const formatDate = date => dateFormat.format(date);
+
+export const formatMonth = date => monthFormat.format(date);
