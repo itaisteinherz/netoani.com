@@ -50,5 +50,14 @@
 		"eslint-config-xo-react": "^0.32.0",
 		"globals": "^17.13.0",
 		"xo": "^5.0.1"
+	},
+	"overrides": {
+		"@gatsbyjs/reach-router": {
+			"react": "$react",
+			"react-dom": "$react-dom"
+		},
+		"react-typography": {
+			"react": "$react"
+		}
 	}
 }

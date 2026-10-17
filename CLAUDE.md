@@ -4,17 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Personal website and blog (netoani.com) built with Gatsby 5 + React 19. It is based on the [Gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). Package manager is Yarn (`.npmrc` disables `package-lock`, so don't create one). Use Node 24, which is pinned in `.node-version` and managed with fnm (`fnm use`). Gatsby 5 doesn't support Node 26 yet.
+Personal website and blog (netoani.com) built with Gatsby 5 + React 19. It is based on the [Gatsby starter blog](https://github.com/gatsbyjs/gatsby-starter-blog). Package manager is npm, with a committed `package-lock.json`. `overrides` in `package.json` accept React 19 for packages whose peer ranges stop at React 18 (both verified to work). Use Node 24, which is pinned in `.node-version` and managed with fnm (`fnm use`). Gatsby 5 doesn't support Node 26 yet.
 
 The site is deployed by Netlify, which builds every PR as a deploy preview. Netlify also reads `.node-version` to choose the Node version for the build.
 
 ## Commands
 
-- `yarn`: install dependencies
-- `yarn develop`: local dev server, with GraphiQL at `/___graphql`
-- `yarn build`: production build into `public/`. It doesn't run Gatsby's development-mode lint check, so changes under `src/` should also be checked with `yarn develop`.
-- `yarn serve`: serve the production build
-- `yarn test`: runs `xo` (lint only; there are no unit tests). `npx xo --fix` auto-fixes. `npx xo <file>` lints a single file.
+- `npm install`: install dependencies (`npm ci` for a clean install from the lockfile)
+- `npm run develop`: local dev server, with GraphiQL at `/___graphql`
+- `npm run build`: production build into `public/`. It doesn't run Gatsby's development-mode lint check, so changes under `src/` should also be checked with `npm run develop`.
+- `npm run serve`: serve the production build
+- `npm test`: runs `xo` (lint only; there are no unit tests). `npx xo --fix` auto-fixes. `npx xo <file>` lints a single file.
 
 ## Code style
 
