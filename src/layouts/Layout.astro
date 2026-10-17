@@ -1,0 +1,61 @@
+---
+import {site} from "../site.js";
+import "../styles/global.css";
+
+const {title, description = site.description} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{title} | {site.title}</title>
+		<meta name="description" content={description}>
+		<meta property="og:title" content={title}>
+		<meta property="og:description" content={description}>
+		<meta property="og:type" content="website">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:creator" content={site.social.twitter}>
+		<meta name="twitter:title" content={title}>
+		<meta name="twitter:description" content={description}>
+		<link rel="alternate" type="application/rss+xml" title={site.title} href="/rss.xml">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:400,400i,600,700">
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1><a href="/">{site.title}</a></h1>
+			</header>
+			<main>
+				<slot/>
+			</main>
+		</div>
+	</body>
+</html>
+
+<style>
+	.container {
+		max-width: 54rem;
+		margin: 0 auto;
+		padding: 2.7rem 1.35rem;
+	}
+
+	header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		margin-bottom: 3.6rem;
+	}
+
+	h1 {
+		margin: 0 1.8rem 0 0;
+		font-size: 1.18921rem;
+		line-height: 1.8rem;
+	}
+
+	h1 a {
+		color: inherit;
+	}
+</style>

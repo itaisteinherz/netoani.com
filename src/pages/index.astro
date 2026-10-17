@@ -1,0 +1,53 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Bio from "../components/Bio.astro";
+import Date from "../components/Date.astro";
+import {getPosts, postUrl} from "../posts.js";
+
+const posts = await getPosts();
+---
+
+<Layout title="All posts">
+	<ol>
+		{posts.toReversed().map(post => (
+			<li>
+				<article itemscope itemtype="https://schema.org/Article">
+					<header>
+						<h2>
+							<a href={postUrl(post)} itemprop="url">
+								<span itemprop="headline">{post.data.title}</span>
+							</a>
+						</h2>
+						<Date date={post.data.date}/>
+					</header>
+					<p itemprop="description">{post.data.description}</p>
+				</article>
+			</li>
+		))}
+	</ol>
+	<hr>
+	<footer>
+		<Bio/>
+	</footer>
+</Layout>
+
+<style>
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin-top: 1.8rem;
+	}
+
+	h2 {
+		margin-bottom: 1.8rem;
+	}
+
+	hr {
+		margin-top: 1.8rem;
+		margin-bottom: 1.8rem;
+	}
+</style>

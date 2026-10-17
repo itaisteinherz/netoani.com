@@ -1,0 +1,18 @@
+---
+import {formatDate} from "../posts.js";
+
+const {date} = Astro.props;
+---
+
+<time datetime={date.toISOString()}>{formatDate(date)}</time>
+
+<style>
+	time {
+		display: block;
+		margin-bottom: 0.36rem;
+		color: hsla(0, 0%, 0%, 0.55);
+		font-size: 0.75786rem;
+		font-weight: 500;
+		line-height: 1;
+	}
+</style>
