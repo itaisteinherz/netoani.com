@@ -9,16 +9,12 @@ const BlogPostTemplate = ({data, location}) => {
 	const post = data.markdownRemark;
 	const siteTitle = data.site.siteMetadata?.title;
 
-	const {title, date, description} = post.frontmatter;
+	const {title, date} = post.frontmatter;
 
 	const {previous, next} = data;
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<Seo
-				title={title}
-				description={description || post.excerpt}
-			/>
 			<article
 				itemScope
 				itemType="https://schema.org/Article"
@@ -84,6 +80,18 @@ const BlogPostTemplate = ({data, location}) => {
 };
 
 export default BlogPostTemplate;
+
+export const Head = ({data}) => {
+	const post = data.markdownRemark;
+	const {title, description} = post.frontmatter;
+
+	return (
+		<Seo
+			title={title}
+			description={description || post.excerpt}
+		/>
+	);
+};
 
 export const pageQuery = graphql`
 	query BlogPostBySlug(

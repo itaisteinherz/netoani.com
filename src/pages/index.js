@@ -12,7 +12,6 @@ const Homepage = ({data, location}) => {
 	if (posts.length === 0) {
 		return (
 			<Layout location={location} title={siteTitle}>
-				<Seo title="All posts"/>
 				<Bio/>
 				<p>
 					No blog posts found. Add markdown posts to&nbsp;
@@ -31,7 +30,6 @@ const Homepage = ({data, location}) => {
 
 	return (
 		<Layout location={location} title={siteTitle}>
-			<Seo title="All posts"/>
 			<Bio/>
 			<hr
 				style={{
@@ -103,6 +101,8 @@ const Homepage = ({data, location}) => {
 };
 
 export default Homepage;
+
+export const Head = () => <Seo title="All posts"/>;
 
 export const pageQuery = graphql`
 	query {
