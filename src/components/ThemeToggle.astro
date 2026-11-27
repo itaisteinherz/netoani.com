@@ -11,6 +11,7 @@
 <script>
 	const root = document.documentElement;
 	const button = document.querySelector(".theme-toggle");
+	const colorSchemeMeta = document.querySelector("meta[name=color-scheme]");
 	const systemDark = matchMedia("(prefers-color-scheme: dark)");
 
 	const currentTheme = () => root.dataset.theme ?? (systemDark.matches ? "dark" : "light");
@@ -24,8 +25,10 @@
 		// Choosing the system's theme goes back to following the system
 		if (theme === systemTheme) {
 			delete root.dataset.theme;
+			colorSchemeMeta.content = "light dark";
 		} else {
 			root.dataset.theme = theme;
+			colorSchemeMeta.content = theme;
 		}
 
 		try {
